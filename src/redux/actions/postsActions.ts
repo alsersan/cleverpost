@@ -20,4 +20,4 @@ export type GetPostsActions =
   | GetPostsSuccessAction
   | GetPostsErrorAction;
 
-export type PostActions = GetPostsActions;
+export type PostsActions = GetPostsActions;
