@@ -1,7 +1,15 @@
-import { ApiUser } from 'models';
+import { ApiUser, User } from 'models';
 
 const baseURL = 'http://jsonplaceholder.typicode.com';
 
-export const getAllUsers = (): Promise<ApiUser[]> => {
-  return fetch(`${baseURL}/users`).then((res) => res.json());
+const getAvatarURL = (seed: string) =>
+  `https://avatars.dicebear.com/api/bottts/${seed}.svg`;
+
+const addAvatarToUsers = (users: ApiUser[]): User[] =>
+  users.map((user) => ({ ...user, userAvatar: getAvatarURL(user.username) }));
+
+export const getAllUsers = (): Promise<User[]> => {
+  return fetch(`${baseURL}/users`)
+    .then((res): Promise<ApiUser[]> => res.json())
+    .then((data) => addAvatarToUsers(data));
 };
