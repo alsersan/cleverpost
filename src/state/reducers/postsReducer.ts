@@ -1,6 +1,6 @@
 import { Post } from 'models';
-import { PostsActions } from '../actions';
-import { actionTypes } from '../actionTypes';
+import { PostsActions } from '../actions/postsActions';
+import { postsActionTypes } from '../actionTypes';
 
 interface postsState {
   loading: boolean;
@@ -13,11 +13,11 @@ export const postsReducer = (
   action: PostsActions
 ) => {
   switch (action.type) {
-    case actionTypes.GET_POSTS:
+    case postsActionTypes.GET_POSTS:
       return { loading: true, error: null, data: [] };
-    case actionTypes.GET_POSTS_SUCCESS:
+    case postsActionTypes.GET_POSTS_SUCCESS:
       return { loading: false, error: null, data: action.payload };
-    case actionTypes.GET_POSTS_ERROR:
+    case postsActionTypes.GET_POSTS_ERROR:
       return { loading: false, error: action.payload, data: [] };
     default:
       return state;

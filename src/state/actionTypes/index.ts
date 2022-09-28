@@ -1,7 +1,10 @@
-export enum actionTypes {
+export enum postsActionTypes {
   GET_POSTS = 'GET_POSTS',
   GET_POSTS_SUCCESS = 'GET_POSTS_SUCCESS',
-  GET_POSTS_ERROR = 'GET_POSTS_ERROR',
+  GET_POSTS_ERROR = 'GET_POSTS_ERROR'
+}
+
+export enum usersActionTypes {
   GET_USERS = 'GET_USERS',
   GET_USERS_SUCCESS = 'GET_USERS_SUCCESS',
   GET_USERS_ERROR = 'GET_USERS_ERROR'

@@ -1,17 +1,17 @@
 import { Post } from 'models';
-import { actionTypes } from '../actionTypes';
+import { postsActionTypes } from '../actionTypes';
 
 interface GetPostsAction {
-  type: actionTypes.GET_POSTS;
+  type: postsActionTypes.GET_POSTS;
 }
 
 interface GetPostsSuccessAction {
-  type: actionTypes.GET_POSTS_SUCCESS;
+  type: postsActionTypes.GET_POSTS_SUCCESS;
   payload: Post[];
 }
 
 interface GetPostsErrorAction {
-  type: actionTypes.GET_POSTS_ERROR;
+  type: postsActionTypes.GET_POSTS_ERROR;
   payload: string;
 }
 

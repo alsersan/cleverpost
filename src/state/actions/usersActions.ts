@@ -1,17 +1,17 @@
 import { User } from 'models';
-import { actionTypes } from '../actionTypes';
+import { usersActionTypes } from '../actionTypes';
 
 interface GetUsersAction {
-  type: actionTypes.GET_USERS;
+  type: usersActionTypes.GET_USERS;
 }
 
 interface GetUsersSuccessAction {
-  type: actionTypes.GET_USERS_SUCCESS;
+  type: usersActionTypes.GET_USERS_SUCCESS;
   payload: User[];
 }
 
 interface GetUsersErrorAction {
-  type: actionTypes.GET_USERS_ERROR;
+  type: usersActionTypes.GET_USERS_ERROR;
   payload: string;
 }
 
