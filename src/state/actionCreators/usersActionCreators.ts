@@ -6,7 +6,8 @@ import { AppThunk } from './appThunk';
 export const getUsers = (): AppThunk<UsersActions> => {
   return async (dispatch, getState) => {
     const usersState = getState().users.data;
-    if (usersState.length) return;
+    const hasPrevUsersState = !!usersState.length;
+    if (hasPrevUsersState) return;
 
     dispatch({ type: usersActionTypes.GET_USERS });
     try {
