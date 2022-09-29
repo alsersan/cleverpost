@@ -2,12 +2,12 @@ import { ApiPost, User } from 'models';
 import { getAllPosts, processPosts } from 'services/posts';
 import { getAllUsers } from 'services/users';
 import { GetPostsActions } from '../actions/postsActions';
-import { UsersActions } from '../actions/usersActions';
+import { GetUsersActions } from '../actions/usersActions';
 import { postsActionTypes, usersActionTypes } from '../actionTypes';
 import { AppThunk } from './appThunk';
 
 export const getPostsWithUsers = (): AppThunk<
-  GetPostsActions | UsersActions
+  GetPostsActions | GetUsersActions
 > => {
   return async (dispatch, getState) => {
     const usersState = getState().users.data;

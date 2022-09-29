@@ -1,9 +1,9 @@
 import { getAllUsers } from 'services/users';
-import { UsersActions } from '../actions/usersActions';
+import { GetUsersActions } from '../actions/usersActions';
 import { usersActionTypes } from '../actionTypes';
 import { AppThunk } from './appThunk';
 
-export const getUsers = (): AppThunk<UsersActions> => {
+export const getUsers = (): AppThunk<GetUsersActions> => {
   return async (dispatch, getState) => {
     const usersState = getState().users.data;
     const hasPrevUsersState = !!usersState.length;

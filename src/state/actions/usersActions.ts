@@ -15,7 +15,9 @@ interface GetUsersErrorAction {
   payload: string;
 }
 
-export type UsersActions =
+export type GetUsersActions =
   | GetUsersAction
   | GetUsersSuccessAction
   | GetUsersErrorAction;
+
+export type UsersActions = GetUsersActions;
