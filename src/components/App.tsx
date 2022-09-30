@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useActions } from 'hooks/useActions';
+import 'assets/sass/style.scss';
 
 const App = () => {
   const { getPostsWithUsers } = useActions();
