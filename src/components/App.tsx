@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 import { useActions } from 'hooks/useActions';
 import 'assets/sass/style.scss';
+import { Layout } from './Layout';
 
 const App = () => {
   const { getPostsWithUsers } = useActions();
@@ -9,7 +10,11 @@ const App = () => {
     getPostsWithUsers();
   }, []);
 
-  return <h1>CleverPost</h1>;
+  return (
+    <Layout>
+      <h1>CleverPost</h1>
+    </Layout>
+  );
 };
 
 export default App;
