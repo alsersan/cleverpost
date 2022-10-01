@@ -4,18 +4,26 @@
   width: 100%;
   flex: 0 0 auto;
   height: var(--header-height);
-  padding: 0 1rem;
+  padding: 0 2rem;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
   background-color: var(--primary-background);
   display: flex;
   justify-content: space-between;
+
+  &__logo {
+    font-size: 2rem;
+    font-family: 'RockSalt';
+    background: var(--horizontal-gradient);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -moz-background-clip: text;
+  }
 }
 
 .logued-user {
   display: flex;
   align-items: center;
   height: 100%;
-  padding-right: 2rem;
 
   &__name-wrapper {
     text-align: right;

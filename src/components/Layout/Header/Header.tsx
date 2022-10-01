@@ -4,7 +4,9 @@ import arrowDownIcon from 'assets/icons/arrow-down.svg';
 export const Header = () => {
   return (
     <nav className="header">
-      <span>CleverPost</span>
+      <a href="" className="header__logo">
+        CleverPost
+      </a>
       <div className="logued-user">
         <div className="logued-user__name-wrapper">
           <p className="logued-user__name">John Doe</p>
