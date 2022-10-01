@@ -1,6 +1,7 @@
-import { useEffect } from 'react';
-import { useActions } from 'hooks/useActions';
 import 'assets/sass/style.scss';
+import { useActions } from 'hooks/useActions';
+import { useEffect } from 'react';
+import { PostsPage } from '../pages/PostsPage';
 import { Layout } from './Layout';
 
 const App = () => {
@@ -13,6 +14,7 @@ const App = () => {
   return (
     <Layout>
       <h1>CleverPost</h1>
+      <PostsPage />
     </Layout>
   );
 };

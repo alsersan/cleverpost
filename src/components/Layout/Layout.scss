@@ -11,8 +11,9 @@
 
   &__content {
     flex-grow: 1;
-    height: calc(100vh - var(--header-height));
-    overflow-y: auto;
     position: relative;
+    height: calc(100vh - var(--header-height));
+    background-color: var(--secondary-background);
+    overflow-y: auto;
   }
 }
