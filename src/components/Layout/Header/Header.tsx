@@ -14,7 +14,7 @@ export const Header = () => {
         </div>
         <div className="logued-user__avatar" />
         <img
-          className="logues-user__arrow-icon"
+          className="logued-user__arrow-icon"
           src={arrowDownIcon}
           alt="Down arrow icon"
         />
