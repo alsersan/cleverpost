@@ -1,0 +1,37 @@
+@use 'assets/sass/abstracts/mixins';
+
+.post {
+  @include mixins.box-styles;
+  display: flex;
+  width: 50rem;
+  height: 20rem;
+
+  &__user-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 12rem;
+    background: var(--vertical-gradient);
+  }
+
+  &__avatar {
+    width: 6rem;
+    margin-bottom: 1rem;
+  }
+
+  &__username {
+    color: white;
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    padding: 1rem 2rem;
+  }
+
+  &__title {
+    margin-bottom: 1rem;
+  }
+}
