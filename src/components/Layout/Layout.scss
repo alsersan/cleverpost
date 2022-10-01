@@ -11,7 +11,8 @@
 
   &__content {
     flex-grow: 1;
-    overflow: hidden;
+    height: calc(100vh - var(--header-height));
+    overflow-y: auto;
     position: relative;
   }
 }
