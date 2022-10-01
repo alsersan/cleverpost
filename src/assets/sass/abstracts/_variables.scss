@@ -2,6 +2,10 @@
   /* Colors */
   --primary-color: #e61873;
   --secondary-color: #692784;
+  --primary-color-filter: invert(20%) sepia(88%) saturate(4682%)
+    hue-rotate(323deg) brightness(93%) contrast(94%);
+  $white-color-filter: invert(100%) sepia(0%) saturate(1%) hue-rotate(16deg)
+    brightness(106%) contrast(100%);
   --primary-background: #ffffff;
   --secondary-background: #f4f6f9;
   --vertical-gradient: linear-gradient(
@@ -13,6 +17,9 @@
     var(--secondary-color),
     var(--primary-color)
   );
+
+  /* Typography */
+  --light-text: #949494;
 
   /* Box styles */
   --box-border-radius: 5px;

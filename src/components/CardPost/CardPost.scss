@@ -6,6 +6,11 @@
   max-width: 50rem;
   min-height: 20rem;
 
+  &:hover &__icons-container {
+    visibility: visible;
+    opacity: 1;
+  }
+
   &__user-details {
     display: flex;
     flex-direction: column;
@@ -31,7 +36,32 @@
     padding: 1rem 2rem;
   }
 
+  &__flex-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__icons-container {
+    display: flex;
+    visibility: hidden;
+    opacity: 0;
+    align-items: center;
+    gap: 1.5rem;
+    transition: all 250ms ease-in;
+  }
+
+  &__icon {
+    &:hover {
+      filter: var(--primary-color-filter);
+    }
+  }
+
+  &__id {
+    color: var(--light-text);
+  }
+
   &__title {
-    margin-bottom: 1rem;
+    margin: 1rem 0;
   }
 }
