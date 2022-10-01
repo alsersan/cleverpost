@@ -10,3 +10,34 @@
   display: flex;
   justify-content: space-between;
 }
+
+.logued-user {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  padding-right: 2rem;
+
+  &__name-wrapper {
+    text-align: right;
+  }
+
+  &__name {
+    font-weight: 600;
+  }
+
+  &__role {
+    font-size: 1.4rem;
+  }
+  &__avatar {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+    background-color: var(--primary-color);
+  }
+
+  &__arrow-icon {
+    height: 0.6rem;
+  }
+}
