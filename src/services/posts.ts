@@ -18,3 +18,26 @@ export const processPosts = (posts: ApiPost[], users: User[]): Post[] => {
   });
   return posts.map((post) => ({ ...post, ...usersMapping[post.userId] }));
 };
+
+export const editPost = (
+  postId: number,
+  postTitle: string,
+  postBody: string
+): Promise<ApiPost> => {
+  return fetch(`${baseURL}/posts/${postId}`, {
+    method: 'PATCH',
+    body: JSON.stringify({
+      title: postTitle,
+      body: postBody
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8'
+    }
+  }).then((res) => res.json());
+};
+
+export const deletePost = (postId: number): void => {
+  fetch(`${baseURL}/posts/${postId}`, {
+    method: 'DELETE'
+  });
+};
