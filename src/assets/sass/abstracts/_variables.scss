@@ -1,6 +1,7 @@
 :root {
   /* Colors */
-  --primary-color: #e61873;
+  --primary-color: rgb(230, 24, 115);
+  --primary-color-light: rgb(230, 24, 115, 0.15);
   --secondary-color: #692784;
   --primary-color-filter: invert(20%) sepia(88%) saturate(4682%)
     hue-rotate(323deg) brightness(93%) contrast(94%);
