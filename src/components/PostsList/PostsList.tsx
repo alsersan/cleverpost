@@ -1,5 +1,5 @@
-import { Post } from 'models';
 import { CardPost } from 'components/CardPost';
+import { Post } from 'models';
 import './PostsList.scss';
 
 interface Props {

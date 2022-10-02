@@ -1,4 +1,5 @@
 import { Post } from 'models';
+
 import { postsActionTypes } from '../actionTypes';
 
 interface GetPostsAction {

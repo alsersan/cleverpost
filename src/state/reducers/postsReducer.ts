@@ -1,4 +1,5 @@
 import { Post } from 'models';
+
 import { PostsActions } from '../actions/postsActions';
 import { postsActionTypes } from '../actionTypes';
 

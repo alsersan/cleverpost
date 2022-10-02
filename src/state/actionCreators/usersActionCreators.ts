@@ -1,4 +1,5 @@
 import { getAllUsers } from 'services/users';
+
 import { GetUsersActions } from '../actions/usersActions';
 import { usersActionTypes } from '../actionTypes';
 import { AppThunk } from './appThunk';

@@ -1,4 +1,5 @@
 import { User } from 'models';
+
 import { usersActionTypes } from '../actionTypes';
 
 interface GetUsersAction {

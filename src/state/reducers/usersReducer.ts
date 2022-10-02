@@ -1,4 +1,5 @@
 import { User } from 'models';
+
 import { UsersActions } from '../actions/usersActions';
 import { usersActionTypes } from '../actionTypes';
 

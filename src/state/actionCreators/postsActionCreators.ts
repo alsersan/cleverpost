@@ -1,6 +1,7 @@
 import { ApiPost, User } from 'models';
 import { getAllPosts, processPosts } from 'services/posts';
 import { getAllUsers } from 'services/users';
+
 import { GetPostsActions } from '../actions/postsActions';
 import { GetUsersActions } from '../actions/usersActions';
 import { postsActionTypes, usersActionTypes } from '../actionTypes';

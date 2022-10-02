@@ -1,6 +1,6 @@
-import { Post } from 'models';
 import deleteIcon from 'assets/icons/delete.svg';
 import editIcon from 'assets/icons/edit.svg';
+import { Post } from 'models';
 import './CardPost.scss';
 
 interface Props {

@@ -1,6 +1,6 @@
 import './Sidebar.scss';
-import usersLogo from 'assets/icons/users.svg';
 import postLogo from 'assets/icons/post.svg';
+import usersLogo from 'assets/icons/users.svg';
 
 export const Sidebar = () => {
   return (
