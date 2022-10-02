@@ -16,6 +16,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 1rem;
     min-width: 12rem;
     background: var(--vertical-gradient);
   }
@@ -26,7 +27,10 @@
   }
 
   &__username {
+    text-align: center;
     color: white;
+    width: 100%;
+    overflow-wrap: break-word;
   }
 
   &__content {
