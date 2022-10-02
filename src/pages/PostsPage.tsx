@@ -1,3 +1,4 @@
+import { Loader } from 'components/Loader';
 import { PostsList } from 'components/PostsList';
 import { useActions } from 'hooks/useActions';
 import { useAppSelector } from 'hooks/useAppSelector';
@@ -13,11 +14,13 @@ export const PostsPage = () => {
 
   return (
     <div className="page">
-      <h2 className="page__title">Posts page</h2>
-      {loading && <span>Loading...</span>}
+      {loading && <Loader />}
       {error && <span>{error}</span>}
       {!loading && !error && (
-        <PostsList posts={data} onDelete={deletePostHandler} />
+        <>
+          <h2 className="page__title">Posts page</h2>
+          <PostsList posts={data} onDelete={deletePostHandler} />
+        </>
       )}
     </div>
   );
