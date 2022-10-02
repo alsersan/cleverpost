@@ -5,9 +5,10 @@ import './CardPost.scss';
 
 interface Props {
   postData: Post;
+  onDelete: (postId: number) => void;
 }
 
-export const CardPost: React.FC<Props> = ({ postData }) => {
+export const CardPost: React.FC<Props> = ({ postData, onDelete }) => {
   return (
     <div className="post">
       <div className="post__user-details">
@@ -29,7 +30,7 @@ export const CardPost: React.FC<Props> = ({ postData }) => {
                 alt="Down arrow icon"
               />
             </button>
-            <button>
+            <button onClick={() => onDelete(postData.id)}>
               <img
                 className="post__icon"
                 src={deleteIcon}

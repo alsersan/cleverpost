@@ -4,13 +4,14 @@ import './PostsList.scss';
 
 interface Props {
   posts: Post[];
+  onDelete: (postId: number) => void;
 }
 
-export const PostsList: React.FC<Props> = ({ posts }) => {
+export const PostsList: React.FC<Props> = ({ posts, onDelete }) => {
   return (
     <ul className="post-list">
       {posts.map((post) => (
-        <CardPost key={post.id} postData={post} />
+        <CardPost key={post.id} postData={post} onDelete={onDelete} />
       ))}
     </ul>
   );
