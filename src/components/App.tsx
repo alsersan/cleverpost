@@ -13,7 +13,6 @@ const App = () => {
 
   return (
     <Layout>
-      <h1>CleverPost</h1>
       <PostsPage />
     </Layout>
   );

@@ -7,7 +7,7 @@ export const PostsPage = () => {
 
   return (
     <div className="page">
-      <h2 className="page__title">Posts Page</h2>
+      <h2 className="page__title">Posts page</h2>
       {loading && <span>Loading...</span>}
       {error && <span>{error}</span>}
       {!loading && !error && <PostsList posts={data} />}

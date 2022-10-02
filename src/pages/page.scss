@@ -1,4 +1,8 @@
 .page {
   width: 100%;
   padding: 1rem 2rem;
+
+  &__title {
+    margin-bottom: 2rem;
+  }
 }
