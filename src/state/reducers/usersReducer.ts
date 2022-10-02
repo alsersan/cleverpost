@@ -12,7 +12,7 @@ interface usersState {
 export const usersReducer = (
   state: usersState = { loading: false, error: null, data: [] },
   action: UsersActions
-) => {
+): usersState => {
   switch (action.type) {
     case usersActionTypes.GET_USERS:
       return { loading: true, error: null, data: [] };

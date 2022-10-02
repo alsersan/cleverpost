@@ -12,7 +12,7 @@ interface postsState {
 export const postsReducer = (
   state: postsState = { loading: false, error: null, data: [] },
   action: PostsActions
-) => {
+): postsState => {
   switch (action.type) {
     case postsActionTypes.GET_POSTS:
       return { loading: true, error: null, data: [] };
