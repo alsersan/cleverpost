@@ -44,10 +44,8 @@
           "builtin",
           "external",
           "internal",
-          "sibling",
-          "parent",
-          "index",
-          "unknown"
+          ["sibling", "parent"],
+          "index"
         ],
         "newlines-between": "always",
         "alphabetize": {
