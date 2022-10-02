@@ -1,8 +1,12 @@
-import { ApiPost, User } from 'models';
-import { getAllPosts, processPosts } from 'services/posts';
+import { ApiPost, Post, User } from 'models';
+import * as postsService from 'services/posts';
 import { getAllUsers } from 'services/users';
 
-import { GetPostsActions } from '../actions/postsActions';
+import {
+  DeletePostActions,
+  EditPostActions,
+  GetPostsActions
+} from '../actions/postsActions';
 import { GetUsersActions } from '../actions/usersActions';
 import { postsActionTypes, usersActionTypes } from '../actionTypes';
 import { AppThunk } from './appThunk';
@@ -21,7 +25,7 @@ export const getPostsWithUsers = (): AppThunk<
     dispatch({ type: postsActionTypes.GET_POSTS });
 
     try {
-      const posts = getAllPosts();
+      const posts = postsService.getAllPosts();
       let users: Promise<User[]> | User[];
       if (hasPrevUsersState) {
         users = usersState;
@@ -34,7 +38,7 @@ export const getPostsWithUsers = (): AppThunk<
         users
       ];
       Promise.all(requests).then(([posts, users]) => {
-        const processedPosts = processPosts(posts, users);
+        const processedPosts = postsService.processPosts(posts, users);
         dispatch({
           type: postsActionTypes.GET_POSTS_SUCCESS,
           payload: processedPosts
@@ -58,6 +62,51 @@ export const getPostsWithUsers = (): AppThunk<
             payload: err.message
           });
         }
+      }
+    }
+  };
+};
+
+export const editPost = (
+  post: Post,
+  title: string,
+  body: string
+): AppThunk<EditPostActions> => {
+  return async (dispatch) => {
+    dispatch({ type: postsActionTypes.EDIT_POST });
+    try {
+      postsService.editPost(post.id, title, body);
+      const updatedPost: Post = { ...post, title, body };
+      dispatch({
+        type: postsActionTypes.EDIT_POST_SUCCESS,
+        payload: updatedPost
+      });
+    } catch (err) {
+      if (err instanceof Error) {
+        dispatch({
+          type: postsActionTypes.EDIT_POST_ERROR,
+          payload: err.message
+        });
+      }
+    }
+  };
+};
+
+export const deletePost = (postId: number): AppThunk<DeletePostActions> => {
+  return async (dispatch) => {
+    dispatch({ type: postsActionTypes.DELETE_POST });
+    try {
+      postsService.deletePost(postId);
+      dispatch({
+        type: postsActionTypes.DELETE_POST_SUCCESS,
+        payload: postId
+      });
+    } catch (err) {
+      if (err instanceof Error) {
+        dispatch({
+          type: postsActionTypes.DELETE_POST_ERROR,
+          payload: err.message
+        });
       }
     }
   };
