@@ -14,6 +14,6 @@
     position: relative;
     height: calc(100vh - var(--header-height));
     background-color: var(--secondary-background);
-    overflow-y: auto;
+    overflow: hidden;
   }
 }

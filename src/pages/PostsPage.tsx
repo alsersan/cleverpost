@@ -2,6 +2,7 @@ import { Loader } from 'components/Loader';
 import { PostsList } from 'components/PostsList';
 import { useActions } from 'hooks/useActions';
 import { useAppSelector } from 'hooks/useAppSelector';
+
 import './page.scss';
 
 export const PostsPage = () => {
@@ -13,7 +14,7 @@ export const PostsPage = () => {
   };
 
   return (
-    <div className="page">
+    <div className="page" id="posts-page">
       {loading && <Loader />}
       {error && <span>{error}</span>}
       {!loading && !error && (
