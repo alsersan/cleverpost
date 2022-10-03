@@ -4,6 +4,7 @@
   @include mixins.box-styles;
   display: flex;
   max-width: 50rem;
+  width: 100%;
   min-height: 20rem;
   transition: all 250ms ease;
 
