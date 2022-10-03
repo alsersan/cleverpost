@@ -17,16 +17,41 @@ export const EditPostModal: React.FC<Props> = ({ container, post }) => {
   return createPortal(
     <div className="edit-modal">
       <div className="edit-modal__box">
-        <textarea
-          className="edit-modal__input"
-          value={title}
-          onInput={(e) => setTitle(e.currentTarget.value)}
-        />
-        <textarea
-          className="edit-modal__input"
-          value={body}
-          onInput={(e) => setBody(e.currentTarget.value)}
-        />
+        <h4 className="edit-modal__title">Edit Post</h4>
+        <span className="edit-modal__info">
+          Editing post # {post.id} from user {post.username} (userId:{' '}
+          {post.userId})
+        </span>
+        <div className="modal-input-group modal-input-group--small">
+          <label className="modal-input-group__label" htmlFor="edit-post-title">
+            Edit title
+          </label>
+          <textarea
+            id="edit-post-title"
+            className="modal-input-group__textarea"
+            value={title}
+            onInput={(e) => setTitle(e.currentTarget.value)}
+          />
+        </div>
+        <div className="modal-input-group modal-input-group--large">
+          <label className="modal-input-group__label" htmlFor="edit-post-title">
+            Edit body
+          </label>
+          <textarea
+            id="edit-post-body"
+            className="modal-input-group__textarea"
+            value={body}
+            onInput={(e) => setBody(e.currentTarget.value)}
+          />
+        </div>
+        <div className="modal-btn-group">
+          <button className="modal-btn-group__btn modal-btn-group__btn--secondary">
+            Cancel
+          </button>
+          <button className="modal-btn-group__btn modal-btn-group__btn--primary">
+            Submit
+          </button>
+        </div>
       </div>
     </div>,
     container

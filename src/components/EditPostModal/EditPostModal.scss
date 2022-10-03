@@ -12,14 +12,66 @@
 
   &__box {
     @include mixins.box-styles;
-    width: 40rem;
-    height: 50rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 50rem;
+    height: 60rem;
     padding: 1.5rem 2rem;
   }
 
-  &__input {
+  &__title {
+    font-size: 2.5rem;
+  }
+
+  &__info {
+    align-self: flex-start;
+  }
+}
+
+.modal-input-group {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+
+  &__label {
+    display: inline-block;
+    margin-bottom: 1rem;
+    font-weight: 500;
+  }
+
+  &__textarea {
     width: 100%;
+    flex-grow: 1;
     resize: none;
     padding: 1rem;
+    overflow-y: scroll;
+  }
+
+  &--small {
+    height: 10rem;
+  }
+
+  &--large {
+    flex-grow: 1;
+  }
+}
+
+.modal-btn-group {
+  width: 100%;
+  display: flex;
+  gap: 2rem;
+
+  &__btn {
+    flex-grow: 1;
+
+    &--primary {
+      @include mixins.primary-btn;
+    }
+
+    &--secondary {
+      @include mixins.secondary-btn;
+    }
   }
 }

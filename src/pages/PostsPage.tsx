@@ -27,7 +27,9 @@ export const PostsPage = () => {
   };
 
   return (
-    <div className="page" id="posts-page">
+    <div
+      className={`page ${isModalOpen && 'page--no-overflow'}`}
+      id="posts-page">
       {loading && <Loader />}
       {error && <span>{error}</span>}
       {!loading && !error && (

@@ -4,6 +4,10 @@
   padding: 1rem 2rem;
   overflow-y: auto;
 
+  &--no-overflow {
+    overflow: hidden;
+  }
+
   &__title {
     margin-bottom: 2rem;
   }
