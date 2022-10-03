@@ -3,6 +3,8 @@
   position: relative;
   z-index: 2;
   min-width: 20rem;
+  width: min-content;
+  flex-shrink: 0;
   background-color: var(--primary-background);
   box-shadow: 1px 0 2px rgba(0, 0, 0, 0.1);
   padding: 2rem 0.5rem;
