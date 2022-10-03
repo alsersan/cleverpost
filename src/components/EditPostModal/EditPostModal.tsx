@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { createPortal } from 'react-dom';
+import { FormattedMessage } from 'react-intl';
 
 import { Post } from 'models';
 
@@ -26,14 +27,22 @@ export const EditPostModal: React.FC<Props> = ({
   return createPortal(
     <div className="edit-modal" onClick={() => onClose()}>
       <div className="edit-modal__box" onClick={(e) => e.stopPropagation()}>
-        <h4 className="edit-modal__title">Edit Post</h4>
+        <h4 className="edit-modal__title">
+          <FormattedMessage id="edit-modal.header" />
+        </h4>
         <span className="edit-modal__info">
-          Editing post # {post.id} from user {post.username} (userId:{' '}
-          {post.userId})
+          <FormattedMessage
+            id="edit-modal.info"
+            values={{
+              postId: post.id,
+              username: post.username,
+              userId: post.userId
+            }}
+          />
         </span>
         <div className="modal-input-group modal-input-group--small">
           <label className="modal-input-group__label" htmlFor="edit-post-title">
-            Edit title
+            <FormattedMessage id="edit-modal.title" />
           </label>
           <textarea
             id="edit-post-title"
@@ -44,7 +53,7 @@ export const EditPostModal: React.FC<Props> = ({
         </div>
         <div className="modal-input-group modal-input-group--large">
           <label className="modal-input-group__label" htmlFor="edit-post-title">
-            Edit body
+            <FormattedMessage id="edit-modal.body" />
           </label>
           <textarea
             id="edit-post-body"
@@ -57,12 +66,12 @@ export const EditPostModal: React.FC<Props> = ({
           <button
             className="modal-btn-group__btn modal-btn-group__btn--secondary"
             onClick={() => onClose()}>
-            Cancel
+            <FormattedMessage id="edit-modal.cancel" />
           </button>
           <button
             className="modal-btn-group__btn modal-btn-group__btn--primary"
             onClick={() => onClose({ post, newTitle: title, newBody: body })}>
-            Submit
+            <FormattedMessage id="edit-modal.submit" />
           </button>
         </div>
       </div>

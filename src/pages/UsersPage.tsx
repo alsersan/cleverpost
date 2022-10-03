@@ -1,3 +1,5 @@
+import { FormattedMessage } from 'react-intl';
+
 import { Loader } from 'components/Loader';
 import { UsersList } from 'components/UsersList';
 import { useAppSelector } from 'hooks/useAppSelector';
@@ -12,7 +14,9 @@ export const UsersPage = () => {
       {error && <span>{error}</span>}
       {!loading && !error && (
         <>
-          <h2 className="page__title">Users page</h2>
+          <h2 className="page__title">
+            <FormattedMessage id="users-page.title" />
+          </h2>
           <UsersList users={data} />
         </>
       )}

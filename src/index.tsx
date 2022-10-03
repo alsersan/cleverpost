@@ -20,8 +20,9 @@ const messageOptions: MessageOptions = {
 };
 
 const locale = navigator.language || 'en-US';
-const language = (locale.split(/[-_]/)[0] ||
-  'en') as keyof typeof messageOptions;
+/* const language = (locale.split(/[-_]/)[0] ||
+  'en') as keyof typeof messageOptions; */
+const language = 'es' as keyof typeof messageOptions;
 const message = messageOptions[language] || messageOptions['en'];
 
 const root = createRoot(document.getElementById('root') as HTMLElement);

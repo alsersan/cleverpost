@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { FormattedMessage } from 'react-intl';
 
 import { Loader } from 'components/Loader';
 import { PostsList } from 'components/PostsList';
@@ -51,7 +52,9 @@ export const PostsPage = () => {
       {error && <span>{error}</span>}
       {!loading && !error && (
         <>
-          <h2 className="page__title">Posts page</h2>
+          <h2 className="page__title">
+            <FormattedMessage id="posts-page.title" />
+          </h2>
           <PostsList
             posts={data}
             onDelete={deletePostHandler}

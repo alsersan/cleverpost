@@ -1,4 +1,21 @@
 {
   "sidebar.posts": "Publicaciones",
-  "sidebar.users": "Usuarios"
+  "sidebar.users": "Usuarios",
+  "posts-page.title": "Página de publicaciones",
+  "users-page.title": "Página de usuarios",
+  "edit-modal.header": "Editar publicación",
+  "edit-modal.info": "Editando publicación #{postId} del usuario {username} (id de usuario: {userId})",
+  "edit-modal.title": "Editar título",
+  "edit-modal.body": "Editar cuerpo",
+  "edit-modal.cancel": "Cancelar",
+  "edit-modal.submit": "Editar",
+  "icon.delete-alt": "Icono de borrado",
+  "icon.delete-title": "Borrar publicación",
+  "icon.edit-alt": "Icono de editado",
+  "icon.edit-title": "Editar publicación",
+  "icon.down-arrow-alt": "Icono de flecha hacia abajo",
+  "icon.post-alt": "Icono de publicación",
+  "icon.users-alt": "Icono de usuarios",
+  "img.user-avatar-alt": "Avatar de usuario",
+  "img.spinner-alt": "Imagen de carga"
 }

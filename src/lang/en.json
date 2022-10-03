@@ -1,4 +1,21 @@
 {
   "sidebar.posts": "Posts",
-  "sidebar.users": "Users"
+  "sidebar.users": "Users",
+  "posts-page.title": "Posts page",
+  "users-page.title": "Users page",
+  "edit-modal.header": "Edit post",
+  "edit-modal.info": "Editing post #{postId} from user {username} (user id: {userId})",
+  "edit-modal.title": "Edit title",
+  "edit-modal.body": "Edit body",
+  "edit-modal.cancel": "Cancel",
+  "edit-modal.submit": "Edit",
+  "icon.delete-alt": "Delete icon",
+  "icon.delete-title": "Delete post",
+  "icon.edit-alt": "Edit icon",
+  "icon.edit-title": "Edit post",
+  "icon.down-arrow-alt": "Down arrow icon",
+  "icon.post-alt": "Post icon",
+  "icon.users-alt": "Users icon",
+  "img.user-avatar-alt": "User avatar",
+  "img.spinner-alt": "Loading spinner"
 }

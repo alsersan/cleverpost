@@ -1,3 +1,5 @@
+import { useIntl } from 'react-intl';
+
 import deleteIcon from 'assets/icons/delete.svg';
 import editIcon from 'assets/icons/edit.svg';
 import { Post } from 'models';
@@ -10,12 +12,14 @@ interface Props {
 }
 
 export const CardPost: React.FC<Props> = ({ postData, onDelete, onEdit }) => {
+  const intl = useIntl();
+
   return (
     <div className="post">
       <div className="post__user-details">
         <img
           src={postData.userAvatar}
-          alt="User avatar"
+          alt={intl.formatMessage({ id: 'img.user-avatar-alt' })}
           className="post__avatar"
         />
         <span className="post__username">{postData.username}</span>
@@ -28,14 +32,16 @@ export const CardPost: React.FC<Props> = ({ postData, onDelete, onEdit }) => {
               <img
                 className="post__icon"
                 src={editIcon}
-                alt="Down arrow icon"
+                alt={intl.formatMessage({ id: 'icon.edit-alt' })}
+                title={intl.formatMessage({ id: 'icon.edit-title' })}
               />
             </button>
             <button onClick={() => onDelete(postData.id)}>
               <img
                 className="post__icon"
                 src={deleteIcon}
-                alt="Down arrow icon"
+                alt={intl.formatMessage({ id: 'icon.delete-alt' })}
+                title={intl.formatMessage({ id: 'icon.delete-title' })}
               />
             </button>
           </div>

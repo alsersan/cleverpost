@@ -1,3 +1,5 @@
+import { useIntl } from 'react-intl';
+
 import { User } from 'models';
 import './CardUser.scss';
 
@@ -6,11 +8,13 @@ interface Props {
 }
 
 export const CardUser: React.FC<Props> = ({ userData }) => {
+  const intl = useIntl();
+
   return (
     <div className="user">
       <img
         src={userData.userAvatar}
-        alt="User avatar"
+        alt={intl.formatMessage({ id: 'img.user-avatar-alt' })}
         className="user__avatar"
       />
       <span>{userData.username}</span>
