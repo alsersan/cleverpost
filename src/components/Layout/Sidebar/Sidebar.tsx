@@ -1,4 +1,6 @@
 import './Sidebar.scss';
+import { Link } from 'react-router-dom';
+
 import postLogo from 'assets/icons/post.svg';
 import usersLogo from 'assets/icons/users.svg';
 
@@ -8,20 +10,20 @@ export const Sidebar = () => {
       <nav className="sidebar-nav">
         <ul className="sidebar-nav__section-list">
           <li className="sidebar-nav__section">
-            <a href="" className="sidebar-nav__link">
+            <Link to="/posts" className="sidebar-nav__link">
               <div className="sidebar-nav__icon-wrapper">
                 <img src={postLogo} alt="Post icon" />
               </div>
               Posts
-            </a>
+            </Link>
           </li>
           <li className="sidebar-nav__section">
-            <a href="" className="sidebar-nav__link">
+            <Link to="/users" className="sidebar-nav__link">
               <div className="sidebar-nav__icon-wrapper">
                 <img src={usersLogo} alt="Users icon" />
               </div>
               Users
-            </a>
+            </Link>
           </li>
         </ul>
       </nav>
