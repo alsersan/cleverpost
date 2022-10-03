@@ -15,7 +15,7 @@ export const PostsPage = () => {
   const [editingPost, setEditingPost] = useState<Post | null>(null);
 
   const { loading, error, data } = useAppSelector((state) => state.posts);
-  const { deletePost } = useActions();
+  const { editPost, deletePost } = useActions();
 
   const deletePostHandler = (postId: number) => {
     deletePost(postId);
@@ -24,6 +24,23 @@ export const PostsPage = () => {
   const editPostHandler = (post: Post) => {
     setEditingPost(post);
     setIsModalOpen(true);
+  };
+
+  const closeModalHandler = (editedContent?: {
+    post: Post;
+    newTitle: string;
+    newBody: string;
+  }) => {
+    setIsModalOpen(false);
+    setEditingPost(null);
+
+    if (editedContent) {
+      editPost(
+        editedContent.post,
+        editedContent.newTitle,
+        editedContent.newBody
+      );
+    }
   };
 
   return (
@@ -46,6 +63,7 @@ export const PostsPage = () => {
         <EditPostModal
           container={document.getElementById('posts-page') as HTMLElement}
           post={editingPost}
+          onClose={closeModalHandler}
         />
       )}
     </div>

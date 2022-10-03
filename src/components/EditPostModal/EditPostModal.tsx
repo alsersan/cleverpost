@@ -8,15 +8,24 @@ import './EditPostModal.scss';
 interface Props {
   container: HTMLElement;
   post: Post;
+  onClose: (editedContent?: {
+    post: Post;
+    newTitle: string;
+    newBody: string;
+  }) => void;
 }
 
-export const EditPostModal: React.FC<Props> = ({ container, post }) => {
+export const EditPostModal: React.FC<Props> = ({
+  container,
+  post,
+  onClose
+}) => {
   const [title, setTitle] = useState(post.title);
   const [body, setBody] = useState(post.body);
 
   return createPortal(
-    <div className="edit-modal">
-      <div className="edit-modal__box">
+    <div className="edit-modal" onClick={() => onClose()}>
+      <div className="edit-modal__box" onClick={(e) => e.stopPropagation()}>
         <h4 className="edit-modal__title">Edit Post</h4>
         <span className="edit-modal__info">
           Editing post # {post.id} from user {post.username} (userId:{' '}
@@ -45,10 +54,14 @@ export const EditPostModal: React.FC<Props> = ({ container, post }) => {
           />
         </div>
         <div className="modal-btn-group">
-          <button className="modal-btn-group__btn modal-btn-group__btn--secondary">
+          <button
+            className="modal-btn-group__btn modal-btn-group__btn--secondary"
+            onClick={() => onClose()}>
             Cancel
           </button>
-          <button className="modal-btn-group__btn modal-btn-group__btn--primary">
+          <button
+            className="modal-btn-group__btn modal-btn-group__btn--primary"
+            onClick={() => onClose({ post, newTitle: title, newBody: body })}>
             Submit
           </button>
         </div>
