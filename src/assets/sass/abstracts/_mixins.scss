@@ -4,3 +4,25 @@
   box-shadow: var(--box-shadow);
   overflow: hidden;
 }
+
+@mixin primary-btn() {
+  height: 4rem;
+  border-radius: 50px;
+  background-color: var(--primary-color);
+  color: white;
+
+  &:hover {
+    background-color: var(--secondary-color);
+  }
+}
+
+@mixin secondary-btn() {
+  height: 4rem;
+  border-radius: 50px;
+  border: 1px solid var(--primary-color);
+  color: var(--primary-color);
+
+  &:hover {
+    background-color: var(--primary-color-lighter);
+  }
+}
