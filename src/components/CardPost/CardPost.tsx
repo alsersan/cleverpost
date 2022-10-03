@@ -6,9 +6,10 @@ import './CardPost.scss';
 interface Props {
   postData: Post;
   onDelete: (postId: number) => void;
+  onEdit: (post: Post) => void;
 }
 
-export const CardPost: React.FC<Props> = ({ postData, onDelete }) => {
+export const CardPost: React.FC<Props> = ({ postData, onDelete, onEdit }) => {
   return (
     <div className="post">
       <div className="post__user-details">
@@ -23,7 +24,7 @@ export const CardPost: React.FC<Props> = ({ postData, onDelete }) => {
         <div className="post__flex-wrapper">
           <span className="post__id"># {postData.id}</span>
           <div className="post__icons-container">
-            <button>
+            <button onClick={() => onEdit(postData)}>
               <img
                 className="post__icon"
                 src={editIcon}

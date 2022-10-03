@@ -12,7 +12,14 @@
 
   &__box {
     @include mixins.box-styles;
-    width: 30rem;
-    height: 30rem;
+    width: 40rem;
+    height: 50rem;
+    padding: 1.5rem 2rem;
+  }
+
+  &__input {
+    width: 100%;
+    resize: none;
+    padding: 1rem;
   }
 }
