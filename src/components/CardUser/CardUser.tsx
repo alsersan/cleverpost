@@ -1,5 +1,5 @@
 import { User } from 'models';
-import './CardPost.scss';
+import './CardUser.scss';
 
 interface Props {
   userData: User;
@@ -11,7 +11,7 @@ export const CardUser: React.FC<Props> = ({ userData }) => {
       <img
         src={userData.userAvatar}
         alt="User avatar"
-        className="post__avatar"
+        className="user__avatar"
       />
       <span>{userData.username}</span>
     </div>
