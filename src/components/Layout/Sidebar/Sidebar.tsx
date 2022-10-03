@@ -1,4 +1,5 @@
 import './Sidebar.scss';
+import { FormattedMessage } from 'react-intl';
 import { Link } from 'react-router-dom';
 
 import postLogo from 'assets/icons/post.svg';
@@ -14,7 +15,7 @@ export const Sidebar = () => {
               <div className="sidebar-nav__icon-wrapper">
                 <img src={postLogo} alt="Post icon" />
               </div>
-              Posts
+              <FormattedMessage id="sidebar.posts" />
             </Link>
           </li>
           <li className="sidebar-nav__section">
@@ -22,7 +23,7 @@ export const Sidebar = () => {
               <div className="sidebar-nav__icon-wrapper">
                 <img src={usersLogo} alt="Users icon" />
               </div>
-              Users
+              <FormattedMessage id="sidebar.users" />
             </Link>
           </li>
         </ul>
