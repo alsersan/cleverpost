@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { useActions } from 'hooks/useActions';
+import { NotFoundPage } from 'pages/NotFoundPage';
 import { PostsPage } from 'pages/PostsPage';
 
 import { UsersPage } from '../pages/UsersPage';
@@ -21,6 +22,7 @@ const App = () => {
         <Route path="/" element={<Navigate to="/posts" />} />
         <Route path="/posts" element={<PostsPage />} />
         <Route path="/users" element={<UsersPage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
     </Layout>
   );
