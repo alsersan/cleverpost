@@ -4,12 +4,19 @@
   min-height: 100%;
   position: relative;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   min-width: 20rem;
   width: min-content;
   flex-shrink: 0;
   background-color: var(--primary-background);
   box-shadow: 1px 0 2px rgba(0, 0, 0, 0.1);
   padding: 2rem 0.5rem;
+
+  &__footer {
+    padding: 0 1rem;
+  }
 }
 
 .sidebar-nav {

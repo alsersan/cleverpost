@@ -36,6 +36,7 @@ export const Sidebar = () => {
           </li>
         </ul>
       </nav>
+      <small className="sidebar__footer">&copy; Álvaro Serrano 2022</small>
     </div>
   );
 };
