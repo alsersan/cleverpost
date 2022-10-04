@@ -9,54 +9,53 @@ import { messages } from 'lang/languages';
 import { Sidebar } from './Sidebar';
 
 describe('Sidebar Component', () => {
-  test('renders footer text', () => {
-    render(
-      <BrowserRouter>
-        <IntlProvider locale={'en-US'} messages={messages['en']}>
-          <Sidebar />
-        </IntlProvider>
-      </BrowserRouter>
-    );
+  describe('When the component is instantiated', () => {
+    beforeEach(() => {
+      render(
+        <BrowserRouter>
+          <IntlProvider locale={'en-US'} messages={messages['en']}>
+            <Sidebar />
+          </IntlProvider>
+        </BrowserRouter>
+      );
+    });
+    test('renders footer text', () => {
+      expect(screen.getByText(/Álvaro Serrano/)).toBeInTheDocument();
+    });
 
-    expect(screen.getByText(/Álvaro Serrano/)).toBeInTheDocument();
+    test('renders link list', () => {
+      expect(screen.getByText(/posts/i)).toBeInTheDocument();
+      expect(screen.getAllByRole('link')).toHaveLength(2);
+    });
   });
 
-  test('renders link list', () => {
-    render(
-      <BrowserRouter>
-        <IntlProvider locale={'en-US'} messages={messages['en']}>
-          <Sidebar />
-        </IntlProvider>
-      </BrowserRouter>
-    );
+  describe('when locale changes', () => {
+    test('renders links according to locale', () => {
+      render(
+        <BrowserRouter>
+          <IntlProvider locale={'es-ES'} messages={messages['es']}>
+            <Sidebar />
+          </IntlProvider>
+        </BrowserRouter>
+      );
 
-    expect(screen.getByText(/posts/i)).toBeInTheDocument();
-    expect(screen.getAllByRole('link')).toHaveLength(2);
+      expect(screen.getByText(/publicaciones/i)).toBeInTheDocument();
+    });
   });
 
-  test('navigates on link click', () => {
-    const history = createMemoryHistory();
-    render(
-      <Router location={''} navigator={history}>
-        <IntlProvider locale={'en-US'} messages={messages['en']}>
-          <Sidebar />
-        </IntlProvider>
-      </Router>
-    );
+  describe('on link click', () => {
+    test('navigates', () => {
+      const history = createMemoryHistory();
+      render(
+        <Router location={''} navigator={history}>
+          <IntlProvider locale={'en-US'} messages={messages['en']}>
+            <Sidebar />
+          </IntlProvider>
+        </Router>
+      );
 
-    userEvent.click(screen.getByText(/users/i));
-    expect(history.location.pathname).toBe('/users');
-  });
-
-  test('renders links according to locale', () => {
-    render(
-      <BrowserRouter>
-        <IntlProvider locale={'es-ES'} messages={messages['es']}>
-          <Sidebar />
-        </IntlProvider>
-      </BrowserRouter>
-    );
-
-    expect(screen.getByText(/publicaciones/i)).toBeInTheDocument();
+      userEvent.click(screen.getByText(/users/i));
+      expect(history.location.pathname).toBe('/users');
+    });
   });
 });
