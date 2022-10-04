@@ -1,5 +1,6 @@
-import { ReactNode, createContext, useContext, useState } from 'react';
+import { ReactNode, createContext, useContext } from 'react';
 
+import { useLocalStorageState } from 'hooks/useLocalStorageState';
 import { languages } from 'lang/languages';
 import { Language } from 'models/app/language';
 
@@ -15,12 +16,15 @@ interface Props {
 }
 
 const LangSwitcherProvider: React.FC<Props> = ({ children }) => {
-  const [lang, setLang] = useState<Language>(() => {
-    const locale = navigator.language;
-    const language = locale.split(/[-_]/)[0] || 'en';
-    const lang = languages[language] || languages['en'];
-    return lang;
-  });
+  const [lang, setLang] = useLocalStorageState<Language>(
+    'preferredLang',
+    () => {
+      const locale = navigator.language;
+      const language = locale.split(/[-_]/)[0] || 'en';
+      const lang = languages[language] || languages['en'];
+      return lang;
+    }
+  );
 
   const value = { lang, setLang };
 
