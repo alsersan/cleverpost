@@ -1,3 +1,5 @@
+@use 'assets/sass/abstracts/mixins';
+
 .sidebar {
   min-height: 100%;
   position: relative;
@@ -20,16 +22,9 @@
   }
 
   &__link {
-    display: flex;
+    @include mixins.icon-btn;
     height: 100%;
     width: 100%;
-    align-items: center;
-    padding: 0 1rem;
-    border-radius: var(--box-border-radius);
-
-    &:hover {
-      background-color: var(--primary-color-light);
-    }
   }
 
   &__icon-wrapper {

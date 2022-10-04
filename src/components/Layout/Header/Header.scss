@@ -1,3 +1,5 @@
+@use 'assets/sass/abstracts/mixins';
+
 .header {
   position: relative;
   z-index: 3;
@@ -9,6 +11,7 @@
   background-color: var(--primary-background);
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   &__logo {
     font-size: 2rem;
@@ -71,16 +74,9 @@
   transition: opacity 1s;
 
   &__button {
+    @include mixins.icon-btn;
     width: 100%;
     height: 4rem;
-    display: flex;
-    align-items: center;
-    padding: 0 1.5rem;
-    border-radius: var(--box-border-radius);
-
-    &:hover {
-      background-color: var(--primary-color-light);
-    }
   }
 
   &__icon-wrapper {

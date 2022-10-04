@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { useIntl } from 'react-intl';
 import './LanguageSwitcher.scss';
 
@@ -5,27 +6,39 @@ import arrowDownIcon from 'assets/icons/arrow-down.svg';
 import langIcon from 'assets/icons/lang.svg';
 import { useLangSwitcherContext } from 'contexts/LangSwitcherContext';
 import { languages } from 'lang/languages';
+import { Language } from 'models/app/language';
 
 export const LanguageSwitcher = () => {
   const intl = useIntl();
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const { lang, setLang } = useLangSwitcherContext();
+
+  const handleClick = (lang?: Language) => {
+    setIsDropdownOpen(!isDropdownOpen);
+    if (lang) setLang(lang);
+  };
 
   return (
     <div className="lang-switch">
-      <div className="lang-switch__button-container">
+      <button
+        className="lang-switch__button-container"
+        onClick={() => handleClick()}>
         <img src={langIcon} alt={intl.formatMessage({ id: 'icon.lang-alt' })} />
         <span>{lang.label}</span>
         <img
           src={arrowDownIcon}
           alt={intl.formatMessage({ id: 'icon.logout-alt' })}
         />
-      </div>
-      <ul className="lang-switch__list">
+      </button>
+      <ul
+        className={`lang-switch__list ${
+          isDropdownOpen && 'lang-switch__list--visible'
+        }`}>
         {Object.values(languages).map((lang) => (
           <li key={lang.locale}>
             <button
               className="lang-switch__list-btn"
-              onClick={() => setLang(lang)}>
+              onClick={() => handleClick(lang)}>
               {lang.label}
             </button>
           </li>
