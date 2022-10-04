@@ -1,4 +1,6 @@
 {
+  "header.logout": "Log out",
+  "header.user-role": "Administrator",
   "sidebar.posts": "Posts",
   "sidebar.users": "Users",
   "posts-page.title": "Posts page",
@@ -16,6 +18,7 @@
   "icon.down-arrow-alt": "Down arrow icon",
   "icon.post-alt": "Post icon",
   "icon.users-alt": "Users icon",
+  "icon.logout-alt": "Logout icon",
   "img.user-avatar-alt": "User avatar",
   "img.spinner-alt": "Loading spinner"
 }

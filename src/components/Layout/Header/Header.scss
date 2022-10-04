@@ -49,3 +49,43 @@
     height: 0.6rem;
   }
 }
+
+.header__menu-wrapper {
+  position: relative;
+
+  &:hover .dropdown-menu {
+    display: block;
+  }
+}
+
+.dropdown-menu {
+  width: 17.5rem;
+  position: absolute;
+  display: none;
+  background-color: var(--primary-background);
+  z-index: 2;
+  border-radius: 0 0 var(--box-border-radius) var(--box-border-radius);
+  padding: 0.5rem;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  transition: opacity 1s;
+
+  &__button {
+    width: 100%;
+    height: 4rem;
+    display: flex;
+    align-items: center;
+    padding: 0 1.5rem;
+    border-radius: var(--box-border-radius);
+
+    &:hover {
+      background-color: var(--primary-color-light);
+    }
+  }
+
+  &__icon-wrapper {
+    width: 2.5rem;
+    margin-right: 1rem;
+    text-align: center;
+  }
+}

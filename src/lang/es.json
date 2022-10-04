@@ -1,4 +1,6 @@
 {
+  "header.logout": "Salir",
+  "header.user-role": "Administrador",
   "sidebar.posts": "Publicaciones",
   "sidebar.users": "Usuarios",
   "posts-page.title": "Página de publicaciones",
@@ -16,6 +18,7 @@
   "icon.down-arrow-alt": "Icono de flecha hacia abajo",
   "icon.post-alt": "Icono de publicación",
   "icon.users-alt": "Icono de usuarios",
+  "icon.logout-alt": "Icono de salir",
   "img.user-avatar-alt": "Avatar de usuario",
   "img.spinner-alt": "Imagen de carga"
 }
