@@ -1,9 +1,10 @@
-import './Header.scss';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { Link } from 'react-router-dom';
+import './Header.scss';
 
 import arrowDownIcon from 'assets/icons/arrow-down.svg';
 import logoutIcon from 'assets/icons/logout.svg';
+import { LanguageSwitcher } from 'components/LanguageSwitcher';
 
 export const Header = () => {
   const intl = useIntl();
@@ -13,6 +14,7 @@ export const Header = () => {
       <Link to="/" className="header__logo">
         CleverPost
       </Link>
+      <LanguageSwitcher />
       <div className="header__menu-wrapper">
         <div className="logued-user">
           <div className="logued-user__name-wrapper">
