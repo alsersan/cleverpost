@@ -1,3 +1,4 @@
+import { useAuth0 } from '@auth0/auth0-react';
 import { FormattedMessage, useIntl } from 'react-intl';
 import { Link } from 'react-router-dom';
 import './Header.scss';
@@ -8,6 +9,7 @@ import { LanguageSwitcher } from 'components/LanguageSwitcher';
 
 export const Header = () => {
   const intl = useIntl();
+  const { logout } = useAuth0();
 
   return (
     <nav className="header">
@@ -32,7 +34,9 @@ export const Header = () => {
         </div>
         <ul className="dropdown-menu">
           <li>
-            <button className="dropdown-menu__button">
+            <button
+              className="dropdown-menu__button"
+              onClick={() => logout({ returnTo: window.location.origin })}>
               <div className="dropdown-menu__icon-wrapper">
                 <img
                   className="dropdown-menu__icon"
