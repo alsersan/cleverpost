@@ -1,8 +1,12 @@
 import { ApiPost, Post, User } from 'models';
+import { delay } from 'utils/delay';
 
 const baseURL = 'http://jsonplaceholder.typicode.com';
 
-export const getAllPosts = (): Promise<ApiPost[]> => {
+export const getAllPosts = async (): Promise<ApiPost[]> => {
+  /// Force a delay to simulate slow loading time and show spinner
+  await delay(2000);
+  ///
   return fetch(`${baseURL}/posts`).then((res) => res.json());
 };
 
@@ -39,5 +43,5 @@ export const editPost = (
 export const deletePost = (postId: number): void => {
   fetch(`${baseURL}/posts/${postId}`, {
     method: 'DELETE'
-  });
+  }).then(() => '');
 };

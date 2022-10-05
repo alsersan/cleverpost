@@ -2,7 +2,6 @@ import { ApiPost, Post, User } from 'models';
 import * as postsService from 'services/posts';
 import { getAllUsers } from 'services/users';
 
-import { delay } from '../../utils/delay';
 import {
   DeletePostActions,
   EditPostActions,
@@ -24,9 +23,6 @@ export const getPostsWithUsers = (): AppThunk<
     if (hasPrevPostsState) return;
     if (!hasPrevUsersState) dispatch({ type: usersActionTypes.GET_USERS });
     dispatch({ type: postsActionTypes.GET_POSTS });
-
-    // Force a delay to simulate slow loading time and show spinner
-    await delay(2000);
 
     try {
       const posts = postsService.getAllPosts();
