@@ -3,6 +3,9 @@
 .lang-switch {
   position: relative;
   height: 4rem;
+  display: flex;
+  justify-content: center;
+  flex-grow: 1;
 
   &__button-container {
     height: 100%;
