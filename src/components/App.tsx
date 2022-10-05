@@ -5,6 +5,7 @@ import { IntlProvider } from 'react-intl';
 import { Navigate, Route, Routes } from 'react-router-dom';
 
 import { Layout } from 'components/Layout';
+import { Loader } from 'components/Loader';
 import { ProtectedRoute, ProtectedRouteProps } from 'components/ProtectedRoute';
 import { useLangSwitcherContext } from 'contexts/LangSwitcherContext';
 import { useActions } from 'hooks/useActions';
@@ -32,7 +33,9 @@ export const App = () => {
   return (
     <IntlProvider locale={lang.locale} messages={message}>
       <Layout>
-        {!isLoading && (
+        {isLoading ? (
+          <Loader />
+        ) : (
           <Routes>
             <Route
               path="/"
