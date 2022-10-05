@@ -1,4 +1,5 @@
 import 'assets/sass/style.scss';
+import { useAuth0 } from '@auth0/auth0-react';
 import { useEffect } from 'react';
 import { IntlProvider } from 'react-intl';
 import { Navigate, Route, Routes } from 'react-router-dom';
@@ -16,6 +17,7 @@ import { Layout } from './Layout';
 export const App = () => {
   const { getPostsWithUsers } = useActions();
   const { lang } = useLangSwitcherContext();
+  const { isLoading } = useAuth0();
 
   useEffect(() => {
     getPostsWithUsers();
@@ -27,13 +29,15 @@ export const App = () => {
   return (
     <IntlProvider locale={lang.locale} messages={message}>
       <Layout>
-        <Routes>
-          <Route path="/" element={<Navigate to="/posts" />} />
-          <Route path="/posts" element={<PostsPage />} />
-          <Route path="/users" element={<UsersPage />} />
-          <Route path="/login" element={<LoginPage />} />
-          <Route path="*" element={<NotFoundPage />} />
-        </Routes>
+        {!isLoading && (
+          <Routes>
+            <Route path="/" element={<Navigate to="/posts" />} />
+            <Route path="/posts" element={<PostsPage />} />
+            <Route path="/users" element={<UsersPage />} />
+            <Route path="/login" element={<LoginPage />} />
+            <Route path="*" element={<NotFoundPage />} />
+          </Routes>
+        )}
       </Layout>
     </IntlProvider>
   );
