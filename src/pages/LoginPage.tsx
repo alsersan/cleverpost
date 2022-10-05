@@ -1,6 +1,6 @@
 import './page.scss';
 
-export const LoginPagee = () => {
+export const LoginPage = () => {
   return (
     <div className="page">
       <h2 className="page__title">Login page</h2>
