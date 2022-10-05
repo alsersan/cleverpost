@@ -13,7 +13,7 @@ import { UsersPage } from 'pages/UsersPage';
 
 import { Layout } from './Layout';
 
-const App = () => {
+export const App = () => {
   const { getPostsWithUsers } = useActions();
   const { lang } = useLangSwitcherContext();
 
@@ -38,5 +38,3 @@ const App = () => {
     </IntlProvider>
   );
 };
-
-export default App;
