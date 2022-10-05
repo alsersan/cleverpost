@@ -32,7 +32,7 @@ export const LanguageSwitcher = () => {
       </button>
       <ul
         className={`lang-switch__list ${
-          isDropdownOpen && 'lang-switch__list--visible'
+          isDropdownOpen ? 'lang-switch__list--visible' : ''
         }`}>
         {Object.values(languages).map((lang) => (
           <li key={lang.locale}>

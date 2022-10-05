@@ -46,7 +46,7 @@ export const PostsPage = () => {
 
   return (
     <div
-      className={`page ${isModalOpen && 'page--no-overflow'}`}
+      className={`page ${isModalOpen ? 'page--no-overflow' : ''}`}
       id="posts-page">
       {loading && <Loader />}
       {error && <span>{error}</span>}
