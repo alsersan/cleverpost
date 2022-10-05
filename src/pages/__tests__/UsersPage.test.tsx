@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 
 import { messages } from 'lang/languages';
 import { User } from 'models';
-import { RootState, postsState } from 'state';
+import { PostsState, RootState } from 'state';
 import { renderStoreProvider } from 'tests/test-utils';
 
 import { UsersPage } from '../UsersPage';
@@ -19,7 +19,7 @@ const mockState: RootState = {
       { username: 'Sarah', id: 3 }
     ] as User[]
   },
-  posts: {} as postsState
+  posts: {} as PostsState
 };
 
 describe('UsersPage Component', () => {

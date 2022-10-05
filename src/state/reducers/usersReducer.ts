@@ -3,16 +3,16 @@ import { User } from 'models';
 import { UsersActions } from '../actions/usersActions';
 import { usersActionTypes } from '../actionTypes';
 
-export interface usersState {
+export interface UsersState {
   loading: boolean;
   error: string | null;
   data: User[];
 }
 
 export const usersReducer = (
-  state: usersState = { loading: false, error: null, data: [] },
+  state: UsersState = { loading: false, error: null, data: [] },
   action: UsersActions
-): usersState => {
+): UsersState => {
   switch (action.type) {
     case usersActionTypes.GET_USERS:
       return { loading: true, error: null, data: [] };

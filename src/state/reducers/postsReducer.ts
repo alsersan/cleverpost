@@ -3,16 +3,16 @@ import { Post } from 'models';
 import { PostsActions } from '../actions/postsActions';
 import { postsActionTypes } from '../actionTypes';
 
-export interface postsState {
+export interface PostsState {
   loading: boolean;
   error: string | null;
   data: Post[];
 }
 
 export const postsReducer = (
-  state: postsState = { loading: false, error: null, data: [] },
+  state: PostsState = { loading: false, error: null, data: [] },
   action: PostsActions
-): postsState => {
+): PostsState => {
   switch (action.type) {
     // GET POSTS
     case postsActionTypes.GET_POSTS:
