@@ -12,12 +12,9 @@ export const PostsList: React.FC<Props> = ({ posts, onDelete, onEdit }) => {
   return (
     <ul className="post-list">
       {posts.map((post) => (
-        <CardPost
-          key={post.id}
-          postData={post}
-          onDelete={onDelete}
-          onEdit={onEdit}
-        />
+        <li key={post.id}>
+          <CardPost postData={post} onDelete={onDelete} onEdit={onEdit} />
+        </li>
       ))}
     </ul>
   );

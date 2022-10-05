@@ -11,7 +11,9 @@ export const UsersList: React.FC<Props> = ({ users }) => {
   return (
     <ul className="user-list">
       {users.map((user) => (
-        <CardUser key={user.id} userData={user} />
+        <li key={user.id}>
+          <CardUser userData={user} />
+        </li>
       ))}
     </ul>
   );
