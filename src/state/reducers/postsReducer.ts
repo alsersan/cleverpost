@@ -3,7 +3,7 @@ import { Post } from 'models';
 import { PostsActions } from '../actions/postsActions';
 import { postsActionTypes } from '../actionTypes';
 
-interface postsState {
+export interface postsState {
   loading: boolean;
   error: string | null;
   data: Post[];

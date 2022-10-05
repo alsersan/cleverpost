@@ -3,7 +3,7 @@ import { User } from 'models';
 import { UsersActions } from '../actions/usersActions';
 import { usersActionTypes } from '../actionTypes';
 
-interface usersState {
+export interface usersState {
   loading: boolean;
   error: string | null;
   data: User[];
