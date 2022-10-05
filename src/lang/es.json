@@ -5,6 +5,9 @@
   "sidebar.users": "Usuarios",
   "posts-page.title": "Página de publicaciones",
   "users-page.title": "Página de usuarios",
+  "not-found-page.title": "Página no encontrada",
+  "not-found-page.text": "Lo sentimos, no hemos podido encontrar la página que buscas.",
+  "not-found-page.link": "Ir al inicio",
   "edit-modal.header": "Editar publicación",
   "edit-modal.info": "Editando publicación #{postId} del usuario {username} (id de usuario: {userId})",
   "edit-modal.title": "Editar título",
@@ -21,5 +24,6 @@
   "icon.logout-alt": "Icono de salir",
   "icon.lang-alt": "Icono de lenguaje",
   "img.user-avatar-alt": "Avatar de usuario",
-  "img.spinner-alt": "Imagen de carga"
+  "img.spinner-alt": "Imagen de carga",
+  "img.not-found": "Imagen de página no encontrada"
 }

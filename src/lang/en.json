@@ -5,6 +5,9 @@
   "sidebar.users": "Users",
   "posts-page.title": "Posts page",
   "users-page.title": "Users page",
+  "not-found-page.title": "Page not found",
+  "not-found-page.text": "We're sorry, the page you requested could not be found.",
+  "not-found-page.link": "Go to homepage",
   "edit-modal.header": "Edit post",
   "edit-modal.info": "Editing post #{postId} from user {username} (user id: {userId})",
   "edit-modal.title": "Edit title",
@@ -21,5 +24,6 @@
   "icon.logout-alt": "Logout icon",
   "icon.lang-alt": "Language icon",
   "img.user-avatar-alt": "User avatar",
-  "img.spinner-alt": "Loading spinner"
+  "img.spinner-alt": "Loading spinner",
+  "img.not-found": "Page not found image"
 }
