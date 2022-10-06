@@ -17,6 +17,7 @@ export const CardUser: React.FC<Props> = ({ userData }) => {
         alt={intl.formatMessage({ id: 'img.user-avatar-alt' })}
         className="user__avatar"
       />
+      <span className="user__id"># {userData.id}</span>
       <span>{userData.username}</span>
     </div>
   );
