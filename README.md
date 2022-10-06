@@ -27,6 +27,7 @@
 - Extensive use of custom eslint rules to assure code quality (import order, code style, errors, etc.)
 - Protected routes.
 - Error handling.
+- Usage of env variables for the connection to Auth0.
 - Internationalization in Spanish and English.
 - Since the users had to be fetched anyway in order to recover the username from the UserId, a page displaying all the users was created.
 
