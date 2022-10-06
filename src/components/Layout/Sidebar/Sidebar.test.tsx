@@ -9,6 +9,10 @@ import { messages } from 'lang/languages';
 
 import { Sidebar } from './Sidebar';
 
+const SidebarProps = {
+  isSidebarOpen: true
+};
+
 jest.mock('@auth0/auth0-react');
 const mockedUseAuth0 = jest.mocked(useAuth0);
 
@@ -23,7 +27,7 @@ describe('Sidebar Component', () => {
       render(
         <BrowserRouter>
           <IntlProvider locale={'en-US'} messages={messages['en']}>
-            <Sidebar />
+            <Sidebar {...SidebarProps} />
           </IntlProvider>
         </BrowserRouter>
       );
@@ -43,7 +47,7 @@ describe('Sidebar Component', () => {
       render(
         <BrowserRouter>
           <IntlProvider locale={'es-ES'} messages={messages['es']}>
-            <Sidebar />
+            <Sidebar {...SidebarProps} />
           </IntlProvider>
         </BrowserRouter>
       );
@@ -58,7 +62,7 @@ describe('Sidebar Component', () => {
       render(
         <Router location={''} navigator={history}>
           <IntlProvider locale={'en-US'} messages={messages['en']}>
-            <Sidebar />
+            <Sidebar {...SidebarProps} />
           </IntlProvider>
         </Router>
       );
@@ -78,7 +82,7 @@ describe('Sidebar Component', () => {
       render(
         <BrowserRouter>
           <IntlProvider locale={'en-US'} messages={messages['en']}>
-            <Sidebar />
+            <Sidebar {...SidebarProps} />
           </IntlProvider>
         </BrowserRouter>
       );

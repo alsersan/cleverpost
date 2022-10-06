@@ -10,6 +10,11 @@ import { messages } from 'lang/languages';
 
 import { Header } from './Header';
 
+const headerProps = {
+  isSidebarOpen: true,
+  toggleSidebar: jest.fn()
+};
+
 jest.mock('@auth0/auth0-react');
 const mockedUseAuth0 = jest.mocked(useAuth0);
 
@@ -29,7 +34,7 @@ describe('Header component', () => {
         <BrowserRouter>
           <LangSwitcherProvider>
             <IntlProvider locale={'en-US'} messages={messages['en']}>
-              <Header />
+              <Header {...headerProps} />
             </IntlProvider>
           </LangSwitcherProvider>
         </BrowserRouter>
@@ -55,7 +60,7 @@ describe('Header component', () => {
         <BrowserRouter>
           <LangSwitcherProvider>
             <IntlProvider locale={'es-ES'} messages={messages['es']}>
-              <Header />
+              <Header {...headerProps} />
             </IntlProvider>
           </LangSwitcherProvider>
         </BrowserRouter>
@@ -75,7 +80,7 @@ describe('Header component', () => {
         <Router location={''} navigator={history}>
           <LangSwitcherProvider>
             <IntlProvider locale={'en-US'} messages={messages['en']}>
-              <Header />
+              <Header {...headerProps} />
             </IntlProvider>
           </LangSwitcherProvider>
         </Router>
@@ -99,7 +104,7 @@ describe('Header component', () => {
         <BrowserRouter>
           <LangSwitcherProvider>
             <IntlProvider locale={'en-US'} messages={messages['en']}>
-              <Header />
+              <Header {...headerProps} />
             </IntlProvider>
           </LangSwitcherProvider>
         </BrowserRouter>
