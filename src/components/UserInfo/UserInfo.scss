@@ -1,0 +1,63 @@
+@use 'assets/sass/abstracts/mixins';
+
+.user-info {
+  position: relative;
+
+  &:hover .dropdown-menu {
+    display: block;
+  }
+}
+
+.logued-user {
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  &__name-wrapper {
+    text-align: right;
+  }
+
+  &__name {
+    font-weight: 600;
+  }
+
+  &__role {
+    font-size: 1.4rem;
+  }
+  &__avatar {
+    height: 4rem;
+    width: 4rem;
+    border-radius: 50%;
+    margin-left: 1.5rem;
+    margin-right: 1rem;
+  }
+
+  &__arrow-icon {
+    height: 0.6rem;
+  }
+}
+
+.dropdown-menu {
+  width: 17.5rem;
+  position: absolute;
+  display: none;
+  background-color: var(--primary-background);
+  z-index: 2;
+  border-radius: 0 0 var(--box-border-radius) var(--box-border-radius);
+  padding: 0.5rem;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+  transition: opacity 1s;
+
+  &__button {
+    @include mixins.icon-btn;
+    width: 100%;
+    height: 4rem;
+  }
+
+  &__icon-wrapper {
+    width: 2.5rem;
+    margin-right: 1rem;
+    text-align: center;
+  }
+}
