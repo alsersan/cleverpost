@@ -21,8 +21,10 @@ export const App = () => {
   const { isLoading, isAuthenticated } = useAuth0();
 
   useEffect(() => {
-    getPostsWithUsers();
-  }, []);
+    if (isAuthenticated) {
+      getPostsWithUsers();
+    }
+  }, [isAuthenticated]);
 
   const message =
     messages[lang.language as keyof typeof messages] || messages['en'];
