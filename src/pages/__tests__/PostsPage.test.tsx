@@ -106,7 +106,7 @@ describe('PostsPage component', () => {
       userEvent.type(titleInput, ' edited');
       expect(titleInput).toHaveValue('First post edited');
 
-      userEvent.click(screen.getByRole('button', { name: 'Edit' }));
+      userEvent.click(screen.getByRole('button', { name: 'Submit' }));
       expect(global.fetch).toHaveBeenCalledTimes(1);
       expect(global.fetch).toHaveBeenCalledWith(
         `${baseApiURL}/posts/1`,
