@@ -5,6 +5,7 @@ import userEvent from '@testing-library/user-event';
 import { IntlProvider } from 'react-intl';
 import { BrowserRouter, Router } from 'react-router-dom';
 
+import { LangSwitcherProvider } from 'contexts/LangSwitcherContext';
 import { messages } from 'lang/languages';
 
 import { Sidebar } from './Sidebar';
@@ -27,9 +28,11 @@ describe('Sidebar Component', () => {
     beforeEach(() => {
       render(
         <BrowserRouter>
-          <IntlProvider locale={'en-US'} messages={messages['en']}>
-            <Sidebar {...SidebarProps} />
-          </IntlProvider>
+          <LangSwitcherProvider>
+            <IntlProvider locale={'en-US'} messages={messages['en']}>
+              <Sidebar {...SidebarProps} />
+            </IntlProvider>
+          </LangSwitcherProvider>
         </BrowserRouter>
       );
     });
@@ -47,9 +50,11 @@ describe('Sidebar Component', () => {
     test('renders links according to locale', () => {
       render(
         <BrowserRouter>
-          <IntlProvider locale={'es-ES'} messages={messages['es']}>
-            <Sidebar {...SidebarProps} />
-          </IntlProvider>
+          <LangSwitcherProvider>
+            <IntlProvider locale={'es-ES'} messages={messages['es']}>
+              <Sidebar {...SidebarProps} />
+            </IntlProvider>
+          </LangSwitcherProvider>
         </BrowserRouter>
       );
 
@@ -62,9 +67,11 @@ describe('Sidebar Component', () => {
       const history = createMemoryHistory();
       render(
         <Router location={''} navigator={history}>
-          <IntlProvider locale={'en-US'} messages={messages['en']}>
-            <Sidebar {...SidebarProps} />
-          </IntlProvider>
+          <LangSwitcherProvider>
+            <IntlProvider locale={'en-US'} messages={messages['en']}>
+              <Sidebar {...SidebarProps} />
+            </IntlProvider>
+          </LangSwitcherProvider>
         </Router>
       );
 
@@ -82,9 +89,11 @@ describe('Sidebar Component', () => {
     test('sidebar is not rendered', () => {
       render(
         <BrowserRouter>
-          <IntlProvider locale={'en-US'} messages={messages['en']}>
-            <Sidebar {...SidebarProps} />
-          </IntlProvider>
+          <LangSwitcherProvider>
+            <IntlProvider locale={'en-US'} messages={messages['en']}>
+              <Sidebar {...SidebarProps} />
+            </IntlProvider>
+          </LangSwitcherProvider>
         </BrowserRouter>
       );
 

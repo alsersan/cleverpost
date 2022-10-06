@@ -45,7 +45,7 @@ describe('UsersPage component', () => {
     });
 
     test('renders header', () => {
-      expect(screen.getByText(/users page/i)).toBeInTheDocument();
+      expect(screen.getByText(/users/i)).toBeInTheDocument();
     });
 
     test('renders users', () => {
@@ -70,7 +70,7 @@ describe('UsersPage component', () => {
     });
 
     test('renders the correct message', () => {
-      expect(screen.getByText(/página de usuarios/i)).toBeInTheDocument();
+      expect(screen.getByText(/usuarios/i)).toBeInTheDocument();
     });
   });
 });

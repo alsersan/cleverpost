@@ -48,7 +48,7 @@ describe('PostsPage component', () => {
     });
 
     test('renders header', () => {
-      expect(screen.getByText(/posts page/i)).toBeInTheDocument();
+      expect(screen.getByText(/posts/i)).toBeInTheDocument();
     });
 
     test('renders posts', () => {
@@ -77,7 +77,7 @@ describe('PostsPage component', () => {
     });
 
     test('renders the correct message', () => {
-      expect(screen.getByText(/página de publicaciones/i)).toBeInTheDocument();
+      expect(screen.getByText(/publicaciones/i)).toBeInTheDocument();
     });
   });
 
