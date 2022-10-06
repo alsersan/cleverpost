@@ -1,46 +1,35 @@
-# Getting Started with Create React App
+# Cleverpost
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Usage
 
-## Available Scripts
+- Go to [https://cleverpost.netlify.app/](https://cleverpost.netlify.app/)
+- Log in using your credentials (preferrably with the google social login).
 
-In the project directory, you can run:
+## Details
 
-### `npm start`
+### Design
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+- Fully responsive.
+- Custom made (no external libraries).
+- Just 2 colors (primary and secondary), following Cleverpy's color scheme.
+- Subtle CSS animations and transitions, including a loading spinner.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+### State Management
 
-### `npm test`
+- Redux was used to store the api data.
+- React Context was used to store the language selection.
+- The data from the logued user was not stored locally, since Auth0 provides hooks to access it from any component.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Implementation
 
-### `npm run build`
+- Completely in TypeScript (no "any" types used).
+- ~50 unit and integration tests.
+- Extensive use of custom eslint rules to assure code quality (import order, code style, errors, etc.)
+- Protected routes.
+- Error handling.
+- Internationalization in Spanish and English.
+- Since the users had to be fetched anyway in order to recover the username from the UserId, a page displaying all the users was created.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Additional info
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+- Due to the Auth0 limitation with developer keys, login info is lost when the page is reloaded. Therefore, on page reaload a new log in is required.
