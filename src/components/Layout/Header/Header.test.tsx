@@ -1,3 +1,4 @@
+import { Auth0ContextInterface, User, useAuth0 } from '@auth0/auth0-react';
 import { createMemoryHistory } from '@remix-run/router';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -9,7 +10,19 @@ import { messages } from 'lang/languages';
 
 import { Header } from './Header';
 
+jest.mock('@auth0/auth0-react');
+const mockedUseAuth0 = jest.mocked(useAuth0);
+
 describe('Header component', () => {
+  beforeEach(() => {
+    mockedUseAuth0.mockReturnValue({
+      isAuthenticated: true,
+      logout: () => {
+        return;
+      },
+      user: { name: 'John' } as User
+    } as Auth0ContextInterface<User>);
+  });
   describe('When the component is instantiated', () => {
     beforeEach(() => {
       render(
@@ -70,6 +83,31 @@ describe('Header component', () => {
 
       userEvent.click(screen.getByText(/cleverpost/i));
       expect(history.location.pathname).toBe('/');
+    });
+  });
+
+  describe('When the user is no authenticated', () => {
+    beforeEach(() => {
+      mockedUseAuth0.mockReturnValueOnce({
+        isAuthenticated: false,
+        logout: () => {
+          return;
+        },
+        user: undefined
+      } as Auth0ContextInterface<User>);
+      render(
+        <BrowserRouter>
+          <LangSwitcherProvider>
+            <IntlProvider locale={'en-US'} messages={messages['en']}>
+              <Header />
+            </IntlProvider>
+          </LangSwitcherProvider>
+        </BrowserRouter>
+      );
+    });
+
+    test('user info component is not rendered', () => {
+      expect(screen.queryByAltText(/down arrow icon/i)).not.toBeInTheDocument();
     });
   });
 });
