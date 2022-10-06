@@ -1,6 +1,29 @@
 .user-list {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(4, 1fr);
   justify-items: center;
+}
+
+@media (min-width: 600px) {
+  .user-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 800px) {
+  .user-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1300px) {
+  .user-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1800px) {
+  .user-list {
+    grid-template-columns: repeat(5, 1fr);
+  }
 }

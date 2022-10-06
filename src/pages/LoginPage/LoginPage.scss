@@ -28,8 +28,8 @@
 
   &__square {
     position: absolute;
-    width: 50rem;
-    height: 50rem;
+    width: 40rem;
+    height: 40rem;
     border-radius: 10rem;
     opacity: 0.6;
     background: radial-gradient(
@@ -50,5 +50,12 @@
       top: -20rem;
       right: -20rem;
     }
+  }
+}
+
+@media (min-width: 700px) {
+  .login-page__square {
+    width: 50rem;
+    height: 50rem;
   }
 }

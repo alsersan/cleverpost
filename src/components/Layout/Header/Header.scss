@@ -20,9 +20,15 @@
   }
 
   &__flex-wrapper {
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: space-between;
     flex-basis: 55%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .header__flex-wrapper {
+    display: flex;
   }
 }

@@ -4,7 +4,7 @@
   min-height: 100%;
   position: relative;
   z-index: 2;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   min-width: 20rem;
@@ -38,5 +38,11 @@
     width: 2.5rem;
     margin-right: 1rem;
     text-align: center;
+  }
+}
+
+@media (min-width: 1024px) {
+  .sidebar {
+    display: flex;
   }
 }
