@@ -13,9 +13,8 @@ import { renderStoreProvider } from 'tests/test-utils';
 import { App } from './App';
 
 jest.mock('services/posts');
-jest.mock('services/users');
-
 const mockedGetAllPosts = jest.mocked(getAllPosts);
+jest.mock('services/users');
 const mockedGetAllUsers = jest.mocked(getAllUsers);
 
 const mockState: RootState = {
@@ -82,14 +81,6 @@ describe('App component', () => {
     });
     test('component is rendered', async () => {
       expect(await screen.findByText(/cleverpost/i)).toBeInTheDocument();
-    });
-
-    test('getAllPosts is called', () => {
-      expect(mockedGetAllPosts).toHaveBeenCalledTimes(1);
-    });
-
-    test('getAllUsers is called', () => {
-      expect(mockedGetAllUsers).toHaveBeenCalledTimes(1);
     });
 
     test('spinner is rendered', async () => {
