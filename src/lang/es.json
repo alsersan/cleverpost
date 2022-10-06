@@ -8,6 +8,9 @@
   "not-found-page.title": "Página no encontrada",
   "not-found-page.text": "Lo sentimos, no hemos podido encontrar la página que buscas.",
   "not-found-page.link": "Ir al inicio",
+  "login-page.title": "Identifícate",
+  "login-page.text": "Por favor identíficate para tener acceso",
+  "login-page.btn": "Entrar",
   "edit-modal.header": "Editar publicación",
   "edit-modal.info": "Editando publicación #{postId} del usuario {username} (id de usuario: {userId})",
   "edit-modal.title": "Editar título",
@@ -25,5 +28,6 @@
   "icon.lang-alt": "Icono de lenguaje",
   "img.user-avatar-alt": "Avatar de usuario",
   "img.spinner-alt": "Imagen de carga",
+  "img.company-logo-alt": "Logo de la empresa",
   "img.not-found": "Imagen de página no encontrada"
 }
