@@ -17,10 +17,12 @@ export const Header = () => {
       <Link to="/" className="header__logo">
         CleverPost
       </Link>
-      <LanguageSwitcher />
-      {isAuthenticated && user && (
-        <UserInfo user={user} handleLogout={handleLogout} />
-      )}
+      <div className="header__flex-wrapper">
+        <LanguageSwitcher />
+        {isAuthenticated && user && (
+          <UserInfo user={user} handleLogout={handleLogout} />
+        )}
+      </div>
     </nav>
   );
 };
