@@ -2,7 +2,7 @@
 
 ## Usage
 
-- Go to [https://cleverpost.netlify.app/](https://cleverpost.netlify.app/)
+- Go to [https://cleverpost.netlify.app](https://cleverpost.netlify.app/)
 - Log in using your credentials (preferrably with the google social login).
 
 ## Details
