@@ -14,7 +14,7 @@ export const NotFoundPage = () => {
       </h2>
       <img
         src={pageNotFoundImg}
-        alt={intl.formatMessage({ id: 'img.not-found' })}
+        alt={intl.formatMessage({ id: 'img.not-found-alt' })}
         className="not-found-img"
       />
       <p>
