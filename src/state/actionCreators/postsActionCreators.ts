@@ -37,7 +37,7 @@ export const getPostsWithUsers = (): AppThunk<
         posts,
         users
       ];
-      Promise.all(requests).then(([posts, users]) => {
+      await Promise.all(requests).then(([posts, users]) => {
         const processedPosts = postsService.processPosts(posts, users);
         dispatch({
           type: postsActionTypes.GET_POSTS_SUCCESS,
@@ -75,7 +75,7 @@ export const editPost = (
   return async (dispatch) => {
     dispatch({ type: postsActionTypes.EDIT_POST });
     try {
-      postsService.editPost(post.id, title, body);
+      await postsService.editPost(post.id, title, body);
       const updatedPost: Post = { ...post, title, body };
       dispatch({
         type: postsActionTypes.EDIT_POST_SUCCESS,
@@ -96,7 +96,7 @@ export const deletePost = (postId: number): AppThunk<DeletePostActions> => {
   return async (dispatch) => {
     dispatch({ type: postsActionTypes.DELETE_POST });
     try {
-      postsService.deletePost(postId);
+      await postsService.deletePost(postId);
       dispatch({
         type: postsActionTypes.DELETE_POST_SUCCESS,
         payload: postId
