@@ -8,7 +8,11 @@ import { useLangSwitcherContext } from 'contexts/LangSwitcherContext';
 import { languages } from 'lang/languages';
 import { Language } from 'models/app/language';
 
-export const LanguageSwitcher = () => {
+interface Props {
+  fullWidth?: boolean;
+}
+
+export const LanguageSwitcher: React.FC<Props> = ({ fullWidth }) => {
   const intl = useIntl();
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const { lang, setLang } = useLangSwitcherContext();
@@ -21,7 +25,9 @@ export const LanguageSwitcher = () => {
   return (
     <div className="lang-switch">
       <button
-        className="lang-switch__button-container"
+        className={`lang-switch__button-container ${
+          fullWidth ? 'lang-switch__button-container--full-width' : ''
+        }`}
         onClick={() => handleClick()}>
         <img src={langIcon} alt={intl.formatMessage({ id: 'icon.lang-alt' })} />
         <span>{lang.label}</span>

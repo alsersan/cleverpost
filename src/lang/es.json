@@ -3,6 +3,7 @@
   "header.user-role": "Administrador",
   "sidebar.posts": "Publicaciones",
   "sidebar.users": "Usuarios",
+  "sidebar.logout": "Salir",
   "posts-page.title": "Publicaciones",
   "users-page.title": "Usuarios",
   "not-found-page.title": "Página no encontrada",

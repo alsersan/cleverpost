@@ -10,7 +10,8 @@ import { messages } from 'lang/languages';
 import { Sidebar } from './Sidebar';
 
 const SidebarProps = {
-  isSidebarOpen: true
+  isSidebarOpen: true,
+  toggleSidebar: jest.fn()
 };
 
 jest.mock('@auth0/auth0-react');

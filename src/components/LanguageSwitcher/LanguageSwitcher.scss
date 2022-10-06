@@ -17,6 +17,10 @@
     &:hover {
       background-color: var(--primary-color-light);
     }
+
+    &--full-width {
+      width: 100%;
+    }
   }
 
   &__list {
