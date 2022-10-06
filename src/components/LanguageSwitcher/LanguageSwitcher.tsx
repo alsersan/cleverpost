@@ -23,7 +23,8 @@ export const LanguageSwitcher: React.FC<Props> = ({ fullWidth }) => {
   };
 
   return (
-    <div className="lang-switch">
+    <div
+      className={`lang-switch ${fullWidth ? 'lang-switch--full-width' : ''}`}>
       <button
         className={`lang-switch__button-container ${
           fullWidth ? 'lang-switch__button-container--full-width' : ''

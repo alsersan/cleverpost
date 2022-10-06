@@ -5,6 +5,10 @@
   height: 4rem;
   display: flex;
 
+  &--full-width {
+    width: 100%;
+  }
+
   &__button-container {
     height: 100%;
     display: flex;
