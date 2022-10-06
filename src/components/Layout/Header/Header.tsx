@@ -1,11 +1,14 @@
 import { useAuth0 } from '@auth0/auth0-react';
+import { useIntl } from 'react-intl';
 import { Link } from 'react-router-dom';
 import './Header.scss';
 
+import hamburgerMenuIcon from 'assets/icons/hamburger.svg';
 import { LanguageSwitcher } from 'components/LanguageSwitcher';
 import { UserInfo } from 'components/UserInfo';
 
 export const Header = () => {
+  const intl = useIntl();
   const { logout, user, isAuthenticated } = useAuth0();
 
   const handleLogout = () => {
@@ -23,6 +26,13 @@ export const Header = () => {
           <UserInfo user={user} handleLogout={handleLogout} />
         )}
       </div>
+      <button className="header__hamburger-menu">
+        <img
+          src={hamburgerMenuIcon}
+          alt={intl.formatMessage({ id: 'icon.hamburger-alt' })}
+          className="header__hamburger-menu-icon"
+        />
+      </button>
     </nav>
   );
 };
