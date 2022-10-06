@@ -12,6 +12,8 @@
   "login-page.title": "Log in",
   "login-page.text": "Please log in to have access",
   "login-page.btn": "Log in",
+  "error.title": "Something went wrong...",
+  "error.message": "There was an error processing your request. Please try again.",
   "edit-modal.header": "Edit post",
   "edit-modal.info": "Editing post #{postId} from user {username} (user id: {userId})",
   "edit-modal.title": "Edit title",

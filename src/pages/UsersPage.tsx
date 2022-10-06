@@ -1,5 +1,6 @@
 import { FormattedMessage } from 'react-intl';
 
+import { ErrorComponent } from 'components/ErrorComponent';
 import { Loader } from 'components/Loader';
 import { UsersList } from 'components/UsersList';
 import { useAppSelector } from 'hooks/useAppSelector';
@@ -11,7 +12,7 @@ export const UsersPage = () => {
   return (
     <div className="page">
       {loading && <Loader />}
-      {error && <span>{error}</span>}
+      {error && <ErrorComponent />}
       {!loading && !error && (
         <>
           <h2 className="page__title">

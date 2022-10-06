@@ -12,6 +12,8 @@
   "login-page.title": "Identifícate",
   "login-page.text": "Por favor identíficate para tener acceso",
   "login-page.btn": "Entrar",
+  "error.title": "Algo ha ido mal...",
+  "error.message": "Ha habido un error procesando tu petición. Por favor, inténtalo de nuevo.",
   "edit-modal.header": "Editar publicación",
   "edit-modal.info": "Editando publicación #{postId} del usuario {username} (id de usuario: {userId})",
   "edit-modal.title": "Editar título",

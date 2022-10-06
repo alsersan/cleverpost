@@ -1,13 +1,13 @@
 import { useState } from 'react';
 import { FormattedMessage } from 'react-intl';
 
+import { EditPostModal } from 'components/EditPostModal/EditPostModal';
+import { ErrorComponent } from 'components/ErrorComponent';
 import { Loader } from 'components/Loader';
 import { PostsList } from 'components/PostsList';
 import { useActions } from 'hooks/useActions';
 import { useAppSelector } from 'hooks/useAppSelector';
 import { Post } from 'models';
-
-import { EditPostModal } from '../components/EditPostModal/EditPostModal';
 
 import './page.scss';
 
@@ -49,7 +49,7 @@ export const PostsPage = () => {
       className={`page ${isModalOpen ? 'page--no-overflow' : ''}`}
       id="posts-page">
       {loading && <Loader />}
-      {error && <span>{error}</span>}
+      {error && <ErrorComponent />}
       {!loading && !error && (
         <>
           <h2 className="page__title">
