@@ -1,3 +1,4 @@
+import { Auth0ContextInterface, User, useAuth0 } from '@auth0/auth0-react';
 import { createMemoryHistory } from '@remix-run/router';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
@@ -8,7 +9,15 @@ import { messages } from 'lang/languages';
 
 import { Sidebar } from './Sidebar';
 
+jest.mock('@auth0/auth0-react');
+const mockedUseAuth0 = jest.mocked(useAuth0);
+
 describe('Sidebar Component', () => {
+  beforeEach(() => {
+    mockedUseAuth0.mockReturnValue({
+      isAuthenticated: true
+    } as Auth0ContextInterface<User>);
+  });
   describe('When the component is instantiated', () => {
     beforeEach(() => {
       render(
@@ -56,6 +65,25 @@ describe('Sidebar Component', () => {
 
       userEvent.click(screen.getByText(/users/i));
       expect(history.location.pathname).toBe('/users');
+    });
+  });
+
+  describe('when user is not authenticated', () => {
+    beforeEach(() => {
+      mockedUseAuth0.mockReturnValueOnce({
+        isAuthenticated: false
+      } as Auth0ContextInterface<User>);
+    });
+    test('sidebar is not rendered', () => {
+      render(
+        <BrowserRouter>
+          <IntlProvider locale={'en-US'} messages={messages['en']}>
+            <Sidebar />
+          </IntlProvider>
+        </BrowserRouter>
+      );
+
+      expect(screen.queryByText(/Álvaro Serrano/)).not.toBeInTheDocument();
     });
   });
 });
