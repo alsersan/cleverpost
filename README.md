@@ -32,4 +32,4 @@
 
 ### Additional info
 
-- Due to the Auth0 limitation with developer keys, login info is lost when the page is reloaded. Therefore, on page reaload a new log in is required.
+- Due to the Auth0 limitation with developer keys, login info can be lost when the page is reloaded, therefore being redirected to the login page. Just log in again to access the app.
