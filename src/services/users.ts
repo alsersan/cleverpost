@@ -1,6 +1,6 @@
 import { ApiUser, User } from 'models';
 
-const baseURL = 'http://jsonplaceholder.typicode.com';
+const baseURL = 'https://jsonplaceholder.typicode.com';
 
 const getAvatarURL = (seed: string) =>
   `https://avatars.dicebear.com/api/bottts/${seed}.svg`;

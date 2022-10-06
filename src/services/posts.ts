@@ -1,7 +1,7 @@
 import { ApiPost, Post, User } from 'models';
 import { delay } from 'utils/delay';
 
-const baseURL = 'http://jsonplaceholder.typicode.com';
+const baseURL = 'https://jsonplaceholder.typicode.com';
 
 export const getAllPosts = async (): Promise<ApiPost[]> => {
   /// Force a delay to simulate slow loading time and show spinner
