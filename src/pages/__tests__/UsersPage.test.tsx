@@ -22,7 +22,16 @@ const mockState: RootState = {
   posts: {} as PostsState
 };
 
-describe('UsersPage Component', () => {
+describe('UsersPage component', () => {
+  beforeEach(() => {
+    jest
+      .spyOn(global, 'fetch')
+      .mockImplementation(
+        jest.fn(() =>
+          Promise.resolve({ json: () => Promise.resolve({}) })
+        ) as jest.Mock
+      );
+  });
   describe('When the component is instantiated', () => {
     beforeEach(() => {
       renderStoreProvider(
