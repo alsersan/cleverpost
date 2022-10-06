@@ -6,14 +6,18 @@ import { Link } from 'react-router-dom';
 import postLogo from 'assets/icons/post.svg';
 import usersLogo from 'assets/icons/users.svg';
 
-export const Sidebar = () => {
+interface Props {
+  isSidebarOpen: boolean;
+}
+
+export const Sidebar: React.FC<Props> = ({ isSidebarOpen }) => {
   const intl = useIntl();
   const { isAuthenticated } = useAuth0();
 
   return (
     <>
       {isAuthenticated && (
-        <div className="sidebar">
+        <div className={`sidebar ${isSidebarOpen ? 'sidebar--visible' : ''}`}>
           <nav className="sidebar-nav">
             <ul className="sidebar-nav__section-list">
               <li className="sidebar-nav__section">

@@ -2,9 +2,9 @@
 
 .sidebar {
   min-height: 100%;
-  position: relative;
+  position: absolute;
   z-index: 2;
-  display: none;
+  display: flex;
   flex-direction: column;
   justify-content: space-between;
   min-width: 20rem;
@@ -13,6 +13,12 @@
   background-color: var(--primary-background);
   box-shadow: 1px 0 2px rgba(0, 0, 0, 0.1);
   padding: 2rem 0.5rem;
+  transform: translateX(-100%);
+  transition: transform 200ms ease-in-out;
+
+  &--visible {
+    transform: translateX(0);
+  }
 
   &__footer {
     padding: 0 1rem;
@@ -43,6 +49,7 @@
 
 @media (min-width: 1024px) {
   .sidebar {
-    display: flex;
+    transform: translateX(0);
+    position: relative;
   }
 }

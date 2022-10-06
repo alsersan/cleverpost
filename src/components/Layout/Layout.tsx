@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import { ReactNode, useState } from 'react';
 
 import { Header } from './Header';
 import { Sidebar } from './Sidebar';
@@ -9,11 +9,13 @@ interface Props {
 }
 
 export const Layout: React.FC<Props> = ({ children }) => {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
   return (
     <div className="layout">
-      <Header />
+      <Header isSidebarOpen={isSidebarOpen} toggleSidebar={setIsSidebarOpen} />
       <div className="layout__content-container">
-        <Sidebar />
+        <Sidebar isSidebarOpen={isSidebarOpen} />
         <main className="layout__content">{children}</main>
       </div>
     </div>

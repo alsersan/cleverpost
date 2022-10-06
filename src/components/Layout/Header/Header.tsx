@@ -7,7 +7,12 @@ import hamburgerMenuIcon from 'assets/icons/hamburger.svg';
 import { LanguageSwitcher } from 'components/LanguageSwitcher';
 import { UserInfo } from 'components/UserInfo';
 
-export const Header = () => {
+interface Props {
+  isSidebarOpen: boolean;
+  toggleSidebar: React.Dispatch<React.SetStateAction<boolean>>;
+}
+
+export const Header: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
   const intl = useIntl();
   const { logout, user, isAuthenticated } = useAuth0();
 
@@ -26,7 +31,9 @@ export const Header = () => {
           <UserInfo user={user} handleLogout={handleLogout} />
         )}
       </div>
-      <button className="header__hamburger-menu">
+      <button
+        className="header__hamburger-menu"
+        onClick={() => toggleSidebar(!isSidebarOpen)}>
         <img
           src={hamburgerMenuIcon}
           alt={intl.formatMessage({ id: 'icon.hamburger-alt' })}
