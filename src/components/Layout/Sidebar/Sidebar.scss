@@ -41,6 +41,10 @@
     @include mixins.icon-btn;
     height: 100%;
     width: 100%;
+
+    &.active {
+      background-color: var(--primary-color);
+    }
   }
 
   &__icon-wrapper {

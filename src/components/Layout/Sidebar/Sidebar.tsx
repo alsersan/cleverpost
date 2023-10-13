@@ -1,7 +1,7 @@
 import './Sidebar.scss';
 import { useAuth0 } from '@auth0/auth0-react';
 import { FormattedMessage, useIntl } from 'react-intl';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import logoutIcon from 'assets/icons/logout.svg';
 import postLogo from 'assets/icons/post.svg';
@@ -27,7 +27,7 @@ export const Sidebar: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
           {isAuthenticated && (
             <>
               <li className="sidebar-nav__section">
-                <Link
+                <NavLink
                   to="/posts"
                   className="sidebar-nav__link"
                   onClick={() => toggleSidebar(!isSidebarOpen)}>
@@ -38,10 +38,10 @@ export const Sidebar: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
                     />
                   </div>
                   <FormattedMessage id="sidebar.posts" />
-                </Link>
+                </NavLink>
               </li>
               <li className="sidebar-nav__section">
-                <Link
+                <NavLink
                   to="/users"
                   className="sidebar-nav__link"
                   onClick={() => toggleSidebar(!isSidebarOpen)}>
@@ -52,7 +52,7 @@ export const Sidebar: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
                     />
                   </div>
                   <FormattedMessage id="sidebar.users" />
-                </Link>
+                </NavLink>
               </li>
             </>
           )}
