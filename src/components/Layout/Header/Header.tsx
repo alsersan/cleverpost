@@ -31,17 +31,15 @@ export const Header: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
           <UserInfo user={user} handleLogout={handleLogout} />
         )}
       </div>
-      {isAuthenticated && user && (
-        <button
-          className="header__hamburger-menu"
-          onClick={() => toggleSidebar(!isSidebarOpen)}>
-          <img
-            src={hamburgerMenuIcon}
-            alt={intl.formatMessage({ id: 'icon.hamburger-alt' })}
-            className="header__hamburger-menu-icon"
-          />
-        </button>
-      )}
+      <button
+        className="header__hamburger-menu"
+        onClick={() => toggleSidebar(!isSidebarOpen)}>
+        <img
+          src={hamburgerMenuIcon}
+          alt={intl.formatMessage({ id: 'icon.hamburger-alt' })}
+          className="header__hamburger-menu-icon"
+        />
+      </button>
     </nav>
   );
 };

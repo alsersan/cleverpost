@@ -18,11 +18,14 @@ export const Sidebar: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
   const { isAuthenticated, logout } = useAuth0();
 
   return (
-    <>
-      {isAuthenticated && (
-        <div className={`sidebar ${isSidebarOpen ? 'sidebar--visible' : ''}`}>
-          <nav className="sidebar-nav">
-            <ul className="sidebar-nav__section-list">
+    <div
+      className={`sidebar ${isSidebarOpen ? 'sidebar--visible' : ''} ${
+        !isAuthenticated ? 'sidebar--no-auth' : ''
+      }`}>
+      <nav className="sidebar-nav">
+        <ul className="sidebar-nav__section-list">
+          {isAuthenticated && (
+            <>
               <li className="sidebar-nav__section">
                 <Link
                   to="/posts"
@@ -51,37 +54,37 @@ export const Sidebar: React.FC<Props> = ({ isSidebarOpen, toggleSidebar }) => {
                   <FormattedMessage id="sidebar.users" />
                 </Link>
               </li>
-              <li className="sidebar-nav__section--only-mobile">
-                <LanguageSwitcher fullWidth={true} />
-              </li>
-            </ul>
-
-            <div className="sidebar-nav__footer">
-              <div className="sidebar-nav__section sidebar-nav__section--only-mobile">
-                <button
-                  className="sidebar-nav__link"
-                  onClick={() => {
-                    toggleSidebar(!isSidebarOpen);
-                    logout({ returnTo: window.location.origin });
-                  }}>
-                  <div className="sidebar-nav__icon-wrapper">
-                    <img
-                      className="dropdown-menu__icon"
-                      src={logoutIcon}
-                      alt={intl.formatMessage({ id: 'icon.logout-alt' })}
-                    />
-                  </div>
-                  <FormattedMessage id="sidebar.logout" />
-                </button>
-              </div>
-
-              <small className="sidebar-nav__footer-text">
-                &copy; Álvaro Serrano 2022
-              </small>
+            </>
+          )}
+          <li className="sidebar-nav__section--mobile-only">
+            <LanguageSwitcher fullWidth={true} />
+          </li>
+        </ul>
+        <div className="sidebar-nav__footer">
+          {isAuthenticated && (
+            <div className="sidebar-nav__section sidebar-nav__section--mobile-only">
+              <button
+                className="sidebar-nav__link"
+                onClick={() => {
+                  toggleSidebar(!isSidebarOpen);
+                  logout({ returnTo: window.location.origin });
+                }}>
+                <div className="sidebar-nav__icon-wrapper">
+                  <img
+                    className="dropdown-menu__icon"
+                    src={logoutIcon}
+                    alt={intl.formatMessage({ id: 'icon.logout-alt' })}
+                  />
+                </div>
+                <FormattedMessage id="sidebar.logout" />
+              </button>
             </div>
-          </nav>
+          )}
+          <small className="sidebar-nav__footer-text">
+            &copy; Álvaro Serrano 2023
+          </small>
         </div>
-      )}
-    </>
+      </nav>
+    </div>
   );
 };

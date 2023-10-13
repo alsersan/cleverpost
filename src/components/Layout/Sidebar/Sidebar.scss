@@ -4,7 +4,7 @@
   min-height: 100%;
   height: 100%;
   position: absolute;
-  z-index: 2;
+  z-index: 101;
   min-width: 20rem;
   width: min-content;
   flex-shrink: 0;
@@ -32,7 +32,7 @@
     height: 5rem;
     font-weight: bold;
 
-    &--only-mobile {
+    &--mobile-only {
       display: flex;
     }
   }
@@ -64,11 +64,15 @@
   .sidebar {
     transform: translateX(0);
     position: relative;
+
+    &--no-auth {
+      display: none;
+    }
   }
 
   .sidebar-nav {
     &__section {
-      &--only-mobile {
+      &--mobile-only {
         display: none;
       }
     }
