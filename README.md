@@ -9,7 +9,7 @@
 
 ### General
 
-- CRUD application to view and edit/delete posts.
+- CRUD admin-panel-style application to view and edit/delete posts.
 - React + Typescript used.
 
 ### Design
