@@ -10,13 +10,12 @@
 ### General
 
 - CRUD application to create and edit/delete posts.
-- Initial posts are fetched from JSONplaceholder, and edited/deleted locally.
 - React + Typescript used.
 
 ### Design
 
 - Fully responsive.
-- Custom made (no external libraries).
+- Custom made, just using SCSS (no external libraries or frameworks).
 - Just 2 colors (primary and secondary).
 - Subtle CSS animations and transitions, including a loading spinner.
 
@@ -35,4 +34,5 @@
 - Error handling.
 - Usage of env variables for the connection to Auth0.
 - Internationalization in Spanish and English.
+- Initial posts are fetched from JSONplaceholder, and edited/deleted locally.
 - Since the users had to be fetched anyway in order to recover the username from the UserId, a page displaying all the users was created.
