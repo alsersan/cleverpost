@@ -45,6 +45,10 @@
     &.active {
       background-color: var(--primary-color);
       color: white;
+
+      .sidebar-nav__icon-wrapper img {
+        filter: var(--primary-color-filter);
+      }
     }
   }
 
