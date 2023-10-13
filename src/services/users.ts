@@ -3,7 +3,7 @@ import { ApiUser, User } from 'models';
 const baseURL = 'https://jsonplaceholder.typicode.com';
 
 const getAvatarURL = (seed: string) =>
-  `https://avatars.dicebear.com/api/bottts/${seed}.svg`;
+  `https://api.dicebear.com/7.x/bottts/svg?seed=${seed}`;
 
 const addAvatarToUsers = (users: ApiUser[]): User[] =>
   users.map((user) => ({ ...user, userAvatar: getAvatarURL(user.username) }));
