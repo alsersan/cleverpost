@@ -7,16 +7,22 @@
 
 ## Details
 
+### General
+
+- CRUD application to create and edit/delete posts.
+- Initial posts are fetched from JSONplaceholder, and edited/deleted locally.
+- React + Typescript used.
+
 ### Design
 
 - Fully responsive.
 - Custom made (no external libraries).
-- Just 2 colors (primary and secondary), following Cleverpy's color scheme.
+- Just 2 colors (primary and secondary).
 - Subtle CSS animations and transitions, including a loading spinner.
 
 ### State Management
 
-- Redux was used to store the api data.
+- Redux and Redux Toolkit was used to store the api data.
 - React Context was used to store the language selection.
 - The data from the logued user was not stored locally, since Auth0 provides hooks to access it from any component.
 
@@ -30,7 +36,3 @@
 - Usage of env variables for the connection to Auth0.
 - Internationalization in Spanish and English.
 - Since the users had to be fetched anyway in order to recover the username from the UserId, a page displaying all the users was created.
-
-### Additional info
-
-- Due to the Auth0 limitation with developer keys, login info can be lost when the page is reloaded, therefore being redirected to the login page. Just log in again to access the app.
