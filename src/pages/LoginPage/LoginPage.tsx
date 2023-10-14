@@ -2,7 +2,7 @@ import './LoginPage.scss';
 import { useAuth0 } from '@auth0/auth0-react';
 import { FormattedMessage, useIntl } from 'react-intl';
 
-import companyLogo from 'assets/img/spinner.png';
+import companyLogo from 'assets/img/logo.svg';
 
 export const LoginPage = () => {
   const intl = useIntl();
@@ -14,7 +14,7 @@ export const LoginPage = () => {
         <img
           src={companyLogo}
           alt={intl.formatMessage({ id: 'img.company-logo-alt' })}
-          className="login-page__image"
+          className="login-page__logo"
         />
         <h2 className="login-page__title">
           <FormattedMessage id="login-page.title" />

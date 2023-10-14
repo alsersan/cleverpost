@@ -1,7 +1,7 @@
 import './Loader.scss';
 import { useIntl } from 'react-intl';
 
-import spinnerLogo from 'assets/img/spinner.png';
+import spinnerLogo from 'assets/img/logo.svg';
 
 export const Loader = () => {
   const intl = useIntl();

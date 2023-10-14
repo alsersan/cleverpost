@@ -23,7 +23,8 @@
     margin-bottom: 1rem;
   }
 
-  &__image {
+  &__logo {
+    filter: var(--primary-color-filter);
     width: 15rem;
     margin-bottom: 3rem;
   }
