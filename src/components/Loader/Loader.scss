@@ -11,7 +11,8 @@
   &__spinner {
     width: 15rem;
     animation: rotate 1s linear infinite;
-    filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.4));
+    filter: var(--primary-color-filter)
+      drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
   }
 }
 
